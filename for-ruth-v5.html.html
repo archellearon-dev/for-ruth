@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="for ruth 💜"/>
+<title>for ruth, always 💜</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+/* ══ THEMES ══ */
+:root{
+  --bg:#0d0d0f;--bg2:#13131a;--bg3:#1a1a26;
+  --surface:#1e1e2e;--surface2:#252535;--surface3:#2e2e42;
+  --border:rgba(180,160,220,0.15);--border2:rgba(180,160,220,0.08);
+  --accent:#c9b8f0;--accent2:#9b7fd4;--accent3:#6b44b8;
+  --gold:#e8d5a3;--red:#e8392a;--yellow:#ffd94a;--mint:#7ec8a0;
+  --ink:#f0ecff;--ink2:#b0a8cc;--ink3:#5a5478;
+  --glow:rgba(107,68,184,0.25);--glow2:rgba(107,68,184,0.12);
+  --font-d:'Cormorant Garamond',serif;
+  --font-b:'DM Sans',sans-serif;
+  --font-h:'Caveat',cursive;
+  --radius:20px;
+}
+[data-theme="light"]{
+  --bg:#faf8ff;--bg2:#f3eeff;--bg3:#ede4fa;
+  --surface:#fff;--surface2:#f8f5ff;--surface3:#f0eaff;
+  --border:rgba(107,68,184,0.12);--border2:rgba(107,68,184,0.06);
+  --ink:#1a1226;--ink2:#5a4a7a;--ink3:#a090c0;
+  --glow:rgba(107,68,184,0.1);--glow2:rgba(107,68,184,0.05);
+}
+[data-theme="peanuts"]{
+  --bg:#fffef5;--bg2:#fff8e8;--bg3:#fdf0d0;
+  --surface:#fff;--surface2:#fffdf0;--surface3:#fdf8e8;
+  --border:rgba(26,26,46,0.1);--border2:rgba(26,26,46,0.05);
+  --accent:#9b7fd4;--accent2:#7a5cb8;--accent3:#5a3da0;
+  --gold:#ffd94a;--ink:#1a1a2e;--ink2:#5a4a6a;--ink3:#9a8aaa;
+  --glow:rgba(154,127,212,0.15);--glow2:rgba(154,127,212,0.07);
+}
+[data-theme="rosegold"]{
+  --bg:#120c0e;--bg2:#1a1012;--bg3:#221418;
+  --surface:#2a1820;--surface2:#321e28;--surface3:#3c2430;
+  --border:rgba(220,160,150,0.18);--border2:rgba(220,160,150,0.08);
+  --accent:#e8b4a8;--accent2:#c87868;--accent3:#a04848;
+  --gold:#e8d5a3;--ink:#fff0ec;--ink2:#c8a898;--ink3:#886868;
+  --glow:rgba(200,120,100,0.2);--glow2:rgba(200,120,100,0.08);
+}
+[data-theme="forest"]{
+  --bg:#080e08;--bg2:#0c1410;--bg3:#101c12;
+  --surface:#182218;--surface2:#1e2c1e;--surface3:#243624;
+  --border:rgba(140,200,140,0.15);--border2:rgba(140,200,140,0.07);
+  --accent:#a8d8a8;--accent2:#68b068;--accent3:#388038;
+  --gold:#d4e8a8;--ink:#f0fff0;--ink2:#a8c8a8;--ink3:#688868;
+  --glow:rgba(80,160,80,0.18);--glow2:rgba(80,160,80,0.08);
+}
+[data-theme="cream"]{
+  --bg:#f8f3ec;--bg2:#f2ebe0;--bg3:#ece3d4;
+  --surface:#fff9f0;--surface2:#f8f0e4;--surface3:#f2e8d8;
+  --border:rgba(100,70,40,0.12);--border2:rgba(100,70,40,0.06);
+  --accent:#9b7fd4;--accent2:#7a5cb8;--accent3:#5a3da0;
+  --gold:#c8983a;--ink:#2a1e0e;--ink2:#6a4a2a;--ink3:#a08060;
+  --glow:rgba(154,127,212,0.12);--glow2:rgba(154,127,212,0.05);
+}
+
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden;transition:background 0.4s,color 0.4s;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+.orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;animation:orbDrift ease-in-out infinite alternate;opacity:0.15;will-change:transform;contain:layout style;}
+@keyframes orbDrift{0%{transform:translate(0,0);}100%{transform:translate(25px,18px);}}
+
+/* ══ THEME BAR ══ */
+.theme-bar{position:fixed;top:10px;right:10px;z-index:200;background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:5px 10px;display:flex;gap:5px;align-items:center;}
+.tdot{width:16px;height:16px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform 0.2s,border-color 0.2s;flex-shrink:0;}
+.tdot:hover,.tdot.on{transform:scale(1.3);border-color:var(--accent);}
+
+/* ══ NAV ══ */
+nav{position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--surface);border-top:1px solid var(--border);display:flex;justify-content:center;}
+.nb{flex:1;max-width:80px;background:none;border:none;padding:0.5rem 0.2rem 0.6rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:background 0.2s;}
+.nb:hover,.nb.on{background:var(--surface2);}
+.nb .ni{font-size:1rem;}
+.nb .nl{font-size:0.5rem;color:var(--ink3);letter-spacing:0.04em;font-family:var(--font-b);}
+.nb.on .nl{color:var(--accent);}
+
+/* ══ PAGES ══ */
+.page{display:none;min-height:100vh;padding:2.5rem 1rem 5.5rem;max-width:600px;margin:0 auto;position:relative;z-index:2;}
+.page.show{display:block;}
+.page-title{font-family:var(--font-d);font-size:clamp(1.8rem,6vw,2.8rem);color:var(--accent);font-style:italic;margin-bottom:0.2rem;}
+.page-sub{font-size:0.75rem;color:var(--ink3);font-family:var(--font-b);margin-bottom:1.5rem;letter-spacing:0.02em;}
+
+/* cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;margin-bottom:1rem;box-shadow:0 4px 24px var(--glow2);}
+.card h3{font-family:var(--font-h);font-size:1.3rem;color:var(--accent);margin-bottom:0.8rem;}
+.card-accent{background:linear-gradient(135deg,var(--surface),var(--surface2));border-color:var(--border2);}
+
+/* inputs */
+.inp{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:0.55rem 0.9rem;font-family:var(--font-b);font-size:0.85rem;color:var(--ink);outline:none;transition:border-color 0.2s;}
+.inp:focus{border-color:var(--accent);}
+.inp::placeholder{color:var(--ink3);}
+textarea.inp{resize:vertical;min-height:65px;}
+.inp-label{display:block;font-size:0.62rem;font-weight:500;color:var(--ink3);margin-bottom:0.25rem;letter-spacing:0.08em;text-transform:uppercase;}
+.fld{margin-bottom:0.7rem;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;}
+@media(max-width:480px){.row2{grid-template-columns:1fr;}}
+
+/* buttons */
+.btn{font-family:var(--font-b);font-weight:500;font-size:0.85rem;border-radius:50px;padding:0.55rem 1.3rem;cursor:pointer;border:none;transition:opacity 0.2s,transform 0.15s;}
+.btn:hover{opacity:0.88;transform:translateY(-1px);}
+.btn-p{background:var(--accent3);color:white;}
+.btn-g{background:var(--surface2);color:var(--ink2);border:1px solid var(--border);}
+.btn-r{background:var(--red);color:white;}
+.btn-full{width:100%;display:block;text-align:center;margin-top:0.6rem;}
+.btn-sm{font-size:0.72rem;padding:0.28rem 0.7rem;}
+
+/* ══ WELCOME ══ */
+#welcome{position:fixed;inset:0;z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;transition:opacity 0.9s,transform 0.9s;overflow:hidden;background:linear-gradient(160deg,#3a1a6e 0%,#1a0a3a 40%,#0d0820 100%);}
+#welcome::before{display:none;}
+#welcome.gone{opacity:0;transform:scale(1.04);pointer-events:none;}
+.w-icon-area{position:relative;width:120px;height:120px;margin:0 auto 1.2rem;cursor:pointer;}
+.w-icon-area .w-icon-img{width:120px;height:120px;border-radius:50%;object-fit:contain;border:3px solid rgba(255,255,255,0.2);background:var(--surface);}
+.w-icon-area .w-icon-ph{width:120px;height:120px;border-radius:50%;border:2px dashed rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:rgba(255,255,255,0.5);font-family:var(--font-b);text-align:center;background:var(--surface);}
+.w-icon-area input{display:none;}
+.w-title{font-family:var(--font-d);font-size:clamp(2.2rem,9vw,4.5rem);color:#ffffff;line-height:1;font-style:italic;margin-bottom:0.3rem;text-shadow:0 2px 8px rgba(0,0,0,0.5);}
+.w-title em{color:var(--gold);font-style:normal;}
+.w-sub{font-family:var(--font-b);font-size:0.85rem;color:rgba(255,255,255,0.85);margin-bottom:1.5rem;letter-spacing:0.08em;text-transform:uppercase;}
+.w-msg{background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:1.3rem 1.6rem;max-width:420px;font-family:var(--font-h);font-size:1.05rem;color:#ffffff;line-height:1.85;margin-bottom:1.8rem;text-shadow:0 1px 3px rgba(0,0,0,0.4);}
+.w-btn{background:white;color:var(--accent3);font-family:var(--font-b);font-weight:600;font-size:1rem;border:none;border-radius:50px;padding:0.9rem 2.5rem;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.3);transition:transform 0.2s,box-shadow 0.2s;}
+.w-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.4);}
+
+/* ══ HERO ══ */
+#hero{text-align:center;padding-top:3rem;}
+.hero-snoopy{width:110px;height:110px;border-radius:50%;margin:0 auto 1rem;object-fit:contain;border:2px solid var(--border);background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-snoopy img{width:100%;height:100%;object-fit:contain;}
+.hero-snoopy input{display:none;}
+.hero-snoopy .ph{font-size:0.62rem;color:var(--ink3);text-align:center;padding:0.5rem;font-family:var(--font-b);}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.6rem;font-family:var(--font-b);}
+.hero-title{font-family:var(--font-d);font-size:clamp(3rem,11vw,6rem);color:var(--accent);font-style:italic;line-height:1;margin-bottom:0.2rem;}
+.hero-name{font-family:var(--font-h);font-size:clamp(1.6rem,6vw,3rem);color:var(--gold);}
+.hero-div{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--accent2),transparent);margin:1rem auto;}
+.hero-tagline{font-family:var(--font-h);font-size:clamp(1rem,3vw,1.2rem);color:var(--ink2);line-height:1.7;max-width:340px;margin:0 auto;}
+
+/* polaroids */
+.pol-strip{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin:1.5rem 0;}
+.pol{background:white;border-radius:4px;padding:5px 5px 24px;box-shadow:0 6px 20px rgba(0,0,0,0.25),0 2px 6px rgba(0,0,0,0.15);position:relative;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;flex-shrink:0;}
+.pol:hover{transform:scale(1.06) rotate(0deg) !important;box-shadow:0 10px 30px rgba(0,0,0,0.35);}
+.pol-inner{width:100px;height:80px;background:#f0f0f0;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+.pol-inner img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.pol-inner .ph{font-size:0.6rem;color:#bbb;text-align:center;font-family:var(--font-b);padding:0.3rem;}
+.pol-inner input{display:none;}
+.pol-lbl{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-family:var(--font-h);font-size:0.72rem;color:#888;}
+
+/* cd */
+.cd-wrap{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0;}
+.cd-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.65rem 0.85rem;min-width:62px;text-align:center;box-shadow:0 4px 16px var(--glow2);}
+.cd-n{font-family:var(--font-d);font-size:2rem;color:var(--accent);display:block;line-height:1;}
+.cd-l{font-size:0.62rem;color:var(--ink3);letter-spacing:0.06em;}
+
+/* strip */
+#heroStrip{font-size:2rem;text-align:center;margin:1rem 0;letter-spacing:0.2rem;}
+
+/* love widget */
+#loveWidget{position:fixed;right:10px;bottom:68px;z-index:90;width:200px;}
+.lw-bubble{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:0.85rem 1rem;box-shadow:0 6px 24px var(--glow);cursor:pointer;transition:transform 0.2s;}
+.lw-bubble:hover{transform:translateY(-2px);}
+.lw-icon{font-size:1.5rem;display:block;text-align:center;margin-bottom:0.3rem;}
+.lw-msg{font-family:var(--font-h);font-size:0.88rem;color:var(--ink);line-height:1.5;text-align:center;}
+.lw-hint{font-size:0.6rem;color:var(--ink3);text-align:center;margin-top:0.3rem;font-family:var(--font-b);}
+.lw-toggle{background:var(--accent3);border:none;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer;margin:0.3rem 0 0 auto;box-shadow:0 4px 14px var(--glow);transition:transform 0.2s;}
+.lw-toggle:hover{transform:scale(1.1);}
+.widget-hidden .lw-bubble{display:none;}
+
+/* ══ POEM ══ */
+.poem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:1rem;}
+@media(max-width:480px){.poem-grid{grid-template-columns:1fr;}}
+.poem-panel{background:var(--surface);padding:1.3rem;position:relative;}
+.poem-panel:last-child{grid-column:1/-1;text-align:center;padding:1.8rem;}
+.pp-n{font-size:0.6rem;color:var(--ink3);position:absolute;top:8px;left:10px;font-family:var(--font-b);}
+.pp-e{font-size:1.8rem;display:block;margin-bottom:0.4rem;}
+.pp-t{font-family:var(--font-h);font-size:clamp(0.92rem,2.5vw,1.1rem);color:var(--ink);line-height:1.85;}
+.poem-sig{font-family:var(--font-h);font-size:1.6rem;color:var(--accent);margin-top:0.5rem;}
+
+/* ══ LETTER ══ */
+.letter-wrap{background:#fffef8;border:1px solid rgba(107,68,184,0.15);border-radius:var(--radius);padding:2rem;box-shadow:0 8px 32px rgba(0,0,0,0.12);position:relative;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(107,68,184,0.07) 31px,rgba(107,68,184,0.07) 32px);background-size:100% 32px;}
+.letter-txt{font-family:var(--font-h);font-size:clamp(1rem,2.5vw,1.15rem);color:#2a1a3a;line-height:2;}
+.letter-txt p{margin-bottom:1rem;}
+.letter-txt .hl{color:#6b44b8;font-weight:600;}
+.letter-sig{font-family:var(--font-h);font-size:1.7rem;color:#6b44b8;text-align:right;margin-top:1rem;}
+.editable{background:rgba(107,68,184,0.06);border:1px dashed #9b7fd4;border-radius:10px;padding:0.65rem 0.9rem;font-family:var(--font-h);font-size:1.05rem;color:#2a1a3a;line-height:1.8;outline:none;width:100%;min-height:70px;resize:none;margin:0.3rem 0 1rem;}
+.editable:focus{border-color:var(--accent);background:var(--surface2);}
+
+/* special message banner */
+.special-banner{background:linear-gradient(135deg,var(--accent3),var(--accent2));border-radius:var(--radius);padding:1.8rem;margin-bottom:1.2rem;text-align:center;position:relative;overflow:hidden;}
+.special-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");pointer-events:none;}
+.special-banner h2{font-family:var(--font-d);font-size:1.6rem;color:white;font-style:italic;margin-bottom:0.5rem;}
+.special-banner p{font-family:var(--font-b);font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.7;}
+
+/* ══ PLAYLIST ══ */
+.sp-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;margin-bottom:1rem;}
+.sp-row{display:flex;gap:0.5rem;}
+.sp-row input{flex:1;}
+.song-list{display:flex;flex-direction:column;gap:0.7rem;}
+.song-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:0.9rem 1rem;display:flex;gap:0.8rem;align-items:flex-start;animation:fadeUp 0.3s ease;}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(6px);}100%{opacity:1;transform:translateY(0);}}
+.song-n{font-family:var(--font-d);font-size:1.6rem;color:var(--accent2);font-style:italic;min-width:24px;line-height:1;}
+.song-info{flex:1;}
+.song-title{font-family:var(--font-h);font-size:1.05rem;color:var(--accent);}
+.song-artist{font-size:0.72rem;color:var(--ink3);margin:0.12rem 0;font-family:var(--font-b);}
+.song-why{font-size:0.8rem;color:var(--ink2);line-height:1.5;font-family:var(--font-b);}
+.song-del{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:0.85rem;opacity:0.5;}
+.song-del:hover{opacity:1;color:var(--red);}
+
+/* ══ SCRAPBOOK ══ */
+.scrap-add{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem;}
+.scrap-add h2{font-family:var(--font-h);font-size:1.5rem;color:var(--accent);margin-bottom:0.9rem;}
+.photo-drop{border:2px dashed var(--border);border-radius:14px;padding:1.2rem;text-align:center;cursor:pointer;background:var(--surface2);font-size:0.82rem;color:var(--ink3);margin-bottom:0.9rem;transition:border-color 0.2s;}
+.photo-drop:hover{border-color:var(--accent);}
+.photo-drop input{display:none;}
+.photo-prev{width:100%;max-height:180px;object-fit:cover;border-radius:10px;margin-top:0.5rem;display:none;}
+.stk-row{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.6rem;}
+.stk{font-size:1.4rem;cursor:pointer;padding:2px 5px;border-radius:7px;transition:transform 0.15s,background 0.15s;user-select:none;}
+.stk:hover{transform:scale(1.3);background:var(--surface2);}
+.stk.on{background:var(--surface2);transform:scale(1.15);outline:1px solid var(--accent);}
+.stk-prev{font-size:0.75rem;color:var(--ink3);min-height:1rem;margin-bottom:0.7rem;font-family:var(--font-b);}
+.scrap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem;}
+.mem-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:0.9rem;position:relative;animation:fadeUp 0.35s ease;transition:transform 0.2s,box-shadow 0.2s;word-break:break-word;box-shadow:0 4px 16px var(--glow2);}
+.mem-card:hover{transform:translateY(-4px) rotate(0.8deg);box-shadow:0 8px 28px var(--glow);}
+.mem-card:nth-child(even):hover{transform:translateY(-4px) rotate(-0.8deg);}
+.mem-tape{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:44px;height:14px;background:rgba(200,180,240,0.4);border-radius:2px;}
+.mem-photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin-bottom:0.55rem;display:block;}
+.mem-ph{width:100%;aspect-ratio:4/3;background:var(--surface2);border-radius:10px;margin-bottom:0.55rem;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.mem-stk{font-size:1.2rem;letter-spacing:2px;margin-bottom:0.22rem;}
+.mem-cap{font-family:var(--font-h);font-size:1.05rem;color:var(--accent);margin-bottom:0.2rem;}
+.mem-note{font-size:0.78rem;color:var(--ink3);line-height:1.5;font-family:var(--font-b);}
+.mem-del{position:absolute;top:8px;right:8px;background:var(--surface2);border:1px solid var(--border);border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:0.65rem;color:var(--ink3);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;}
+.mem-card:hover .mem-del{opacity:1;}
+.empty-state{text-align:center;padding:2.5rem 1rem;color:var(--ink3);}
+.empty-state .ei{font-size:2.8rem;display:block;margin-bottom:0.6rem;}
+.empty-state p{font-family:var(--font-h);font-size:1.2rem;}
+
+/* ══ STUDY ══ */
+.study-tabs{display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:1.2rem;}
+.stab{font-family:var(--font-b);font-size:0.72rem;font-weight:500;color:var(--ink2);padding:0.3rem 0.8rem;border-radius:50px;border:1px solid var(--border);background:var(--surface);cursor:pointer;white-space:nowrap;transition:background 0.15s,color 0.15s;}
+.stab.on{background:var(--accent3);color:white;border-color:var(--accent3);}
+.spane{display:none;}
+.spane.show{display:block;}
+
+/* year badges */
+.yr-badge{display:inline-block;font-size:0.65rem;font-weight:600;padding:0.18rem 0.65rem;border-radius:50px;border:1px solid var(--border);margin-bottom:0.4rem;font-family:var(--font-b);}
+.y1{background:rgba(232,100,100,0.15);color:#e86464;}
+.y2{background:rgba(232,200,80,0.15);color:#c8a838;}
+.y3{background:rgba(100,180,120,0.15);color:#50a870;}
+.y4{background:rgba(107,68,184,0.15);color:var(--accent2);}
+.ybat{background:rgba(232,100,60,0.2);color:#e86040;}
+
+/* deck grid */
+.deck-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:0.7rem;margin-bottom:1.2rem;}
+.deck-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:0.9rem;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;text-align:center;box-shadow:0 2px 10px var(--glow2);}
+.deck-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px var(--glow);}
+.dk-icon{font-size:1.6rem;display:block;margin-bottom:0.3rem;}
+.dk-name{font-family:var(--font-h);font-size:0.95rem;color:var(--accent);margin-bottom:0.12rem;}
+.dk-cnt{font-size:0.65rem;color:var(--ink3);font-family:var(--font-b);}
+
+/* fc viewer */
+.fc-viewer{display:none;}
+.fc-viewer.show{display:block;}
+.fc-top{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.7rem;flex-wrap:wrap;}
+.fc-name{font-family:var(--font-h);font-size:1.3rem;color:var(--accent);}
+.fc-prog{font-size:0.72rem;color:var(--ink3);font-family:var(--font-b);}
+.mode-tabs{display:flex;gap:0.3rem;flex-wrap:wrap;margin-bottom:0.8rem;}
+.mtab{font-family:var(--font-b);font-size:0.65rem;font-weight:500;background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:0.22rem 0.6rem;cursor:pointer;color:var(--ink2);transition:background 0.15s;}
+.mtab.on{background:var(--accent3);color:white;border-color:var(--accent3);}
+.progress-bar{height:4px;background:var(--surface2);border-radius:4px;margin-bottom:0.8rem;overflow:hidden;}
+.progress-fill{height:100%;background:var(--accent2);border-radius:4px;transition:width 0.3s;}
+.fc-wrap{perspective:800px;margin-bottom:0.8rem;cursor:pointer;}
+.fc-inner{position:relative;width:100%;min-height:150px;transition:transform 0.5s;transform-style:preserve-3d;}
+.fc-wrap.flipped .fc-inner{transform:rotateY(180deg);}
+.fc-face{position:absolute;width:100%;min-height:150px;backface-visibility:hidden;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 4px 20px var(--glow2);}
+.fc-front{background:linear-gradient(135deg,var(--surface),var(--surface2));}
+.fc-back{background:linear-gradient(135deg,var(--surface2),var(--surface3));transform:rotateY(180deg);}
+.fc-face p{font-family:var(--font-h);font-size:clamp(1rem,2.8vw,1.25rem);color:var(--ink);line-height:1.6;}
+.fc-hint{font-size:0.65rem;color:var(--ink3);margin-top:0.4rem;font-family:var(--font-b);}
+.fc-btns{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:0.7rem;}
+.quiz-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem;box-shadow:0 4px 18px var(--glow2);}
+.quiz-q{font-family:var(--font-h);font-size:1.1rem;color:var(--ink);margin-bottom:0.9rem;line-height:1.6;}
+.quiz-meta{font-size:0.65rem;color:var(--ink3);margin-bottom:0.4rem;font-family:var(--font-b);}
+.choices{display:flex;flex-direction:column;gap:0.4rem;}
+.choice{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:0.55rem 0.9rem;font-family:var(--font-b);font-size:0.85rem;color:var(--ink);cursor:pointer;text-align:left;transition:background 0.15s;}
+.choice:hover:not(:disabled){background:var(--surface3);}
+.quiz-fb{margin-top:0.7rem;font-size:0.85rem;display:none;font-family:var(--font-b);padding:0.5rem 0.8rem;border-radius:10px;}
+.fb-correct{background:rgba(80,180,100,0.15);color:#50b464;}
+.fb-wrong{background:rgba(232,80,80,0.15);color:#e85050;}
+.quiz-score{text-align:center;padding:1.5rem;}
+.score-big{font-family:var(--font-d);font-size:2.5rem;color:var(--accent);font-style:italic;}
+.score-sub{font-size:0.85rem;color:var(--ink2);font-family:var(--font-b);margin:0.4rem 0;}
+
+/* ai box */
+.ai-box{background:linear-gradient(135deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem;margin-bottom:1rem;}
+.ai-box h3{font-family:var(--font-h);font-size:1.25rem;color:var(--accent);margin-bottom:0.3rem;}
+.ai-box p{font-size:0.78rem;color:var(--ink3);margin-bottom:0.8rem;font-family:var(--font-b);}
+.ai-loading{display:none;text-align:center;padding:1rem;}
+.ai-loading .sp{font-size:1.8rem;animation:spin 1s linear infinite;display:block;margin-bottom:0.3rem;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.gen-tab{display:none;}
+.gen-tab.show{display:block;}
+.tab-pills{display:flex;gap:0.3rem;margin-bottom:0.8rem;flex-wrap:wrap;}
+.tab-pill{font-size:0.68rem;font-family:var(--font-b);background:var(--surface2);border:1px solid var(--border);border-radius:50px;padding:0.25rem 0.7rem;cursor:pointer;color:var(--ink2);transition:background 0.15s;}
+.tab-pill.on{background:var(--accent3);color:white;border-color:var(--accent3);}
+.custom-cards{display:flex;flex-direction:column;gap:0.4rem;max-height:180px;overflow-y:auto;margin:0.6rem 0;}
+.cc-item{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:0.45rem 0.7rem;display:flex;gap:0.5rem;align-items:flex-start;}
+.cc-q{font-family:var(--font-b);font-size:0.78rem;color:var(--ink);flex:1;}
+.cc-a{font-size:0.72rem;color:var(--ink3);flex:1;font-family:var(--font-b);}
+.cc-del{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:0.72rem;opacity:0.5;}
+.cc-del:hover{opacity:1;color:var(--red);}
+
+/* notes */
+.notes-layout{display:grid;grid-template-columns:190px 1fr;gap:0.8rem;min-height:400px;}
+@media(max-width:560px){.notes-layout{grid-template-columns:1fr;}}
+.nb-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:0.9rem;height:fit-content;}
+.nb-panel h3{font-family:var(--font-h);font-size:1.1rem;color:var(--accent);margin-bottom:0.6rem;}
+.nb-list{display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.6rem;max-height:260px;overflow-y:auto;}
+.nb-item{border:1px solid var(--border);border-radius:9px;padding:0.38rem 0.65rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem;font-family:var(--font-b);font-size:0.8rem;color:var(--ink2);transition:background 0.15s;}
+.nb-item:hover,.nb-item.on{background:var(--surface2);}
+.nb-item.on{font-weight:600;color:var(--ink);}
+.nb-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.nb-del{margin-left:auto;background:none;border:none;color:var(--ink3);cursor:pointer;font-size:0.68rem;opacity:0.4;}
+.nb-del:hover{opacity:1;color:var(--red);}
+.note-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;}
+.note-top{display:flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;flex-wrap:wrap;}
+.search-inp{flex:1;min-width:120px;background:var(--surface2);border:1px solid var(--border);border-radius:50px;padding:0.35rem 0.85rem;font-family:var(--font-b);font-size:0.8rem;color:var(--ink);outline:none;}
+.search-inp:focus{border-color:var(--accent);}
+.search-inp::placeholder{color:var(--ink3);}
+.notes-list{display:flex;flex-direction:column;gap:0.5rem;max-height:340px;overflow-y:auto;margin-bottom:0.6rem;}
+.note-item{border:1px solid var(--border);border-radius:12px;padding:0.75rem 0.9rem;cursor:pointer;transition:transform 0.15s,box-shadow 0.15s;animation:fadeUp 0.3s ease;position:relative;}
+.note-item:hover{transform:translate(-2px,-2px);box-shadow:2px 2px 0 var(--border);}
+.note-item.pinned::after{content:'📌';position:absolute;top:7px;right:7px;font-size:0.8rem;}
+.note-title-d{font-family:var(--font-h);font-size:1rem;color:var(--accent);}
+.note-prev{font-size:0.72rem;color:var(--ink3);margin-top:0.12rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-family:var(--font-b);}
+.note-meta{font-size:0.62rem;color:var(--ink3);margin-top:0.22rem;font-family:var(--font-b);}
+.note-write{display:none;}
+.note-write.show{display:block;}
+.note-write-top{display:flex;gap:0.4rem;align-items:center;margin-bottom:0.6rem;flex-wrap:wrap;}
+.note-title-inp{flex:1;font-family:var(--font-h);font-size:1.3rem;color:var(--accent);border:none;border-bottom:1px solid var(--border);outline:none;background:transparent;padding:0.2rem 0;}
+.fmt-bar{display:flex;gap:0.25rem;flex-wrap:wrap;padding:0.35rem;background:var(--surface2);border-radius:10px;border:1px solid var(--border);margin-bottom:0.5rem;}
+.fmt-btn{font-family:var(--font-b);font-size:0.7rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0.18rem 0.48rem;cursor:pointer;color:var(--ink2);transition:background 0.15s;}
+.fmt-btn:hover{background:var(--accent3);color:white;}
+.cp-dot{width:16px;height:16px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform 0.15s;flex-shrink:0;}
+.cp-dot:hover,.cp-dot.on{transform:scale(1.3);border-color:var(--accent);}
+.note-body{width:100%;min-height:240px;outline:none;font-family:var(--font-b);font-size:0.88rem;color:var(--ink);line-height:2;padding:0.4rem 0.2rem;background-image:repeating-linear-gradient(transparent,transparent 31px,var(--border2) 31px,var(--border2) 32px);background-size:100% 32px;border-radius:8px;}
+.note-body:empty::before{content:attr(placeholder);color:var(--ink3);pointer-events:none;}
+.autosave{font-size:0.62rem;color:var(--ink3);margin-top:0.3rem;font-family:var(--font-b);}
+
+/* todo */
+.todo-add-row{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.8rem;}
+.todo-list{display:flex;flex-direction:column;gap:0.45rem;}
+.todo-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0.62rem 0.9rem;display:flex;gap:0.6rem;align-items:center;animation:fadeUp 0.25s ease;box-shadow:0 2px 8px var(--glow2);}
+.todo-item.done{opacity:0.45;}
+.todo-item.done .td-txt{text-decoration:line-through;color:var(--ink3);}
+.td-chk{width:20px;height:20px;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--surface2);font-size:0.7rem;transition:background 0.15s;}
+.td-chk.on{background:var(--mint);border-color:var(--mint);color:white;}
+.td-txt{flex:1;font-family:var(--font-b);font-size:0.85rem;color:var(--ink);}
+.td-badge{font-size:0.6rem;font-weight:600;padding:0.12rem 0.5rem;border-radius:50px;border:1px solid var(--border);white-space:nowrap;font-family:var(--font-b);}
+.b-school{background:rgba(80,180,120,0.15);color:#50b078;}
+.b-personal{background:rgba(200,150,220,0.15);color:#c08cd8;}
+.b-reminder{background:rgba(232,180,80,0.15);color:#c09838;}
+.b-urgent{background:rgba(232,80,80,0.15);color:#e85050;}
+.td-del{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:0.78rem;opacity:0.4;}
+.td-del:hover{opacity:1;color:var(--red);}
+.rem-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0.62rem 0.9rem;display:flex;gap:0.6rem;align-items:center;animation:fadeUp 0.25s ease;}
+.rem-item.overdue{border-color:rgba(232,80,80,0.4);background:rgba(232,80,80,0.05);}
+
+/* messages editor */
+.msg-list-edit{display:flex;flex-direction:column;gap:0.4rem;max-height:280px;overflow-y:auto;margin-bottom:0.8rem;}
+.msg-edit-item{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:0.5rem 0.8rem;display:flex;align-items:center;gap:0.5rem;}
+.mei-txt{flex:1;font-family:var(--font-b);font-size:0.8rem;color:var(--ink);outline:none;}
+.mei-del{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:0.75rem;opacity:0.4;}
+.mei-del:hover{opacity:1;color:var(--red);}
+
+/* matching */
+.match-item{border:1px solid var(--border);border-radius:10px;padding:0.5rem 0.7rem;cursor:pointer;font-family:var(--font-b);font-size:0.78rem;color:var(--ink);transition:background 0.15s;}
+.match-item:hover{background:var(--surface2);}
+
+/* confetti */
+.cf{position:fixed;pointer-events:none;z-index:999;border-radius:2px;animation:cfFall 1.2s ease-out forwards;}
+@keyframes cfFall{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(230px) rotate(720deg);opacity:0;}}
+</style>
+</head>
+<body data-theme="dark">
+
+<!-- orbs -->
+<div class="orb" style="width:500px;height:500px;background:var(--accent3);top:-150px;right:-150px;animation-duration:9s;"></div>
+<div class="orb" style="width:350px;height:350px;background:var(--accent2);bottom:80px;left:-100px;animation-duration:12s;animation-delay:2s;"></div>
+<div class="orb" style="width:250px;height:250px;background:var(--gold);top:40%;right:5%;animation-duration:15s;animation-delay:5s;opacity:0.08;"></div>
+
+<!-- ══ THEME BAR ══ -->
+<div class="theme-bar">
+  <div class="tdot on" data-t="dark" style="background:#1a1226" onclick="setTheme('dark',this)" title="dark"></div>
+  <div class="tdot" data-t="light" style="background:#f3eeff;border-color:#ddd" onclick="setTheme('light',this)" title="light"></div>
+  <div class="tdot" data-t="peanuts" style="background:#ffd94a" onclick="setTheme('peanuts',this)" title="peanuts"></div>
+  <div class="tdot" data-t="rosegold" style="background:#c87868" onclick="setTheme('rosegold',this)" title="rose gold"></div>
+  <div class="tdot" data-t="forest" style="background:#388038" onclick="setTheme('forest',this)" title="forest"></div>
+  <div class="tdot" data-t="cream" style="background:#e8d5b0;border-color:#c8a868" onclick="setTheme('cream',this)" title="cream"></div>
+</div>
+
+<!-- ══ WELCOME ══ -->
+<div id="welcome">
+  <div class="w-icon-area" onclick="document.getElementById('wIconIn').click()">
+    <input type="file" id="wIconIn" accept="image/*" onchange="uploadWIcon(event)"/>
+    <div class="w-icon-ph" id="wIconEl">📌 tap to add your icon!</div>
+  </div>
+  <div class="w-title">happy anniversary,<br/><em>baby.</em></div>
+  <div class="w-sub">✦ april 8, 2025 → april 8, 2026 ✦</div>
+  <div class="w-msg">hi baby. happy anniversary. i actually don't know what to say because i'm so lost for words — especially how this year has been for us. meeting, spending time, fighting, misunderstandings, break ups, and yet we still find our way back to each other. i love you sosososos much. 💜</div>
+  <button class="w-btn" onclick="openApp()">open our little world 🌙</button>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <button class="nb on" onclick="showPage('hero',this)"><span class="ni">🏠</span><span class="nl">home</span></button>
+  <button class="nb" onclick="showPage('letter',this)"><span class="ni">💌</span><span class="nl">letter</span></button>
+  <button class="nb" onclick="showPage('songs',this)"><span class="ni">🎵</span><span class="nl">songs</span></button>
+  <button class="nb" onclick="showPage('memories',this)"><span class="ni">📸</span><span class="nl">memories</span></button>
+  <button class="nb" onclick="showPage('study',this)"><span class="ni">🩺</span><span class="nl">study</span></button>
+  <button class="nb" onclick="showPage('messages',this)"><span class="ni">💜</span><span class="nl">messages</span></button>
+</nav>
+
+<!-- ══ LOVE WIDGET ══ -->
+<div id="loveWidget">
+  <div class="lw-bubble" onclick="nextWidget()">
+    <span class="lw-icon" id="lwIcon">💜</span>
+    <div class="lw-msg" id="lwMsg">loading...</div>
+    <div class="lw-hint">tap for next ✦</div>
+  </div>
+  <button class="lw-toggle" onclick="toggleWidget()">💜</button>
+</div>
+
+<!-- ══════════ HOME ══════════ -->
+<div class="page show" id="page-hero">
+
+  <!-- special message banner -->
+  <div class="special-banner" style="margin-top:1rem;">
+    <h2>made especially for you, lovey 🩺</h2>
+    <p>baby, i made this whole thing specifically to help you with school — with your flashcards, notes, quizzes, reminders, everything. i know nursing is hard. i know the ldr makes it harder. but i want you to know that even from here, i'm with you every step of the way. every exam, every late night, every moment you want to give up — i'm here. i hope you use this app forever, darling. it was made with a lot of love. 💜</p>
+  </div>
+
+  <!-- snoopy hero -->
+  <div id="heroSnoopyWrap" style="width:90px;height:90px;border-radius:50%;margin:1.2rem auto 0;overflow:hidden;cursor:pointer;background:var(--surface2);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;" onclick="document.getElementById('heroSnoopyIn').click()">
+    <input type="file" id="heroSnoopyIn" accept="image/*" onchange="uploadHeroSnoopy(event)" style="display:none"/>
+    <span style="font-size:0.6rem;color:var(--ink3);text-align:center;padding:0.4rem;font-family:var(--font-b);" id="heroSnoopyPh">📌 tap to add icon</span>
+  </div>
+
+  <div style="text-align:center;padding:0.8rem 0 0.5rem;">
+    <div class="hero-eyebrow">✦ april 8, 2025 → april 8, 2026 ✦</div>
+    <div class="hero-title">happy anniversary</div>
+    <div class="hero-name" id="heroName">baby 💜</div>
+    <div class="hero-div"></div>
+    <div class="hero-tagline">"through every fight, every silence, every soft morning — still us, lovey. still us."</div>
+  </div>
+
+  <!-- polaroids -->
+  <div class="pol-strip" id="heroPols"></div>
+
+  <!-- days together -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1rem 1.2rem;margin:1rem 0 0.5rem;box-shadow:0 4px 18px var(--glow2);text-align:center;" id="togetherCard">
+    <div style="font-family:var(--font-d);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.3rem;">together since april 8, 2025</div>
+    <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;" id="togetherCount"></div>
+    <div style="font-family:var(--font-h);font-size:0.82rem;color:var(--ink3);margin-top:0.3rem;" id="togetherPhrase"></div>
+  </div>
+
+  <!-- countdown to next anniversary -->
+  <div style="font-family:var(--font-d);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink3);text-align:center;margin-top:0.8rem;margin-bottom:0.3rem;" id="cdLabel">next anniversary in</div>
+  <div class="cd-wrap" id="cd"></div>
+
+  <!-- editable strip -->
+  <div id="heroStrip">🐤🐤🐾💜🐾🐤🐤</div>
+  <div style="text-align:center;margin-top:0.4rem;">
+    <button class="btn btn-sm btn-g" onclick="document.getElementById('stripEditBox').style.display=document.getElementById('stripEditBox').style.display==='none'?'block':'none'">✏️ edit strip</button>
+    <div id="stripEditBox" style="display:none;margin-top:0.5rem;">
+      <input class="inp" id="stripInp" placeholder="type emojis here..." value="🐤🐤🐾💜🐾🐤🐤" oninput="updateStrip()"/>
+    </div>
+  </div>
+
+  <!-- poem -->
+  <div style="margin-top:1.5rem;">
+    <div class="page-title" style="margin-bottom:0.3rem;">a poem for you ✦</div>
+    <div class="page-sub">in comic panels, because we are a little dramatic</div>
+    <div class="poem-grid">
+      <div class="poem-panel"><div class="pp-n">01</div><span class="pp-e">🌱</span><div class="pp-t">before you, i was a sentence that didn't know how to end — always trailing off, always almost.</div></div>
+      <div class="poem-panel"><div class="pp-n">02</div><span class="pp-e">🌧️</span><div class="pp-t">then you happened. not gently. the way rain happens to a drought — sudden, necessary, a little overwhelming.</div></div>
+      <div class="poem-panel"><div class="pp-n">03</div><span class="pp-e">🔥</span><div class="pp-t">we fought like people scared of how much it mattered. we broke like things that were being made stronger.</div></div>
+      <div class="poem-panel"><div class="pp-n">04</div><span class="pp-e">🚪</span><div class="pp-t">every time you left i was already at the door — not perfect, just persistent. the way love is persistent.</div></div>
+      <div class="poem-panel"><span class="pp-e">💜</span><div class="pp-t">we are not who we were on day one. we are better. softer where we used to be sharp.<br/><br/>the distance is just geography, darling. i am already building my way to you. one day closer, every morning i choose this.<br/><br/>i hope you use this little world i made for you — forever. happy anniversary, lovey. 🐾</div><div class="poem-sig">always yours 💜</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ LETTER ══════════ -->
+<div class="page" id="page-letter">
+  <div class="page-title">a letter 💌</div>
+  <div class="page-sub">the dotted parts are yours to edit, baby</div>
+  <div class="letter-wrap">
+    <div style="font-size:0.7rem;color:var(--ink3);text-align:center;margin-bottom:1rem;font-family:var(--font-b);">✏️ tap the outlined boxes to write your own words</div>
+    <div class="letter-txt">
+      <p>hi baby. happy anniversary. 🥹</p>
+      <p>i've been sitting here trying to find the right words and honestly — i still can't. because how do you put a whole year into sentences?</p>
+      <p>this year was <span class="hl">everything</span>. meeting you. laughing with you. fighting with you. almost losing you. finding our way back, again and again. i know it hasn't been easy. but neither are you, and i think that's why we make sense.</p>
+      <textarea class="editable" placeholder="write something personal here 💜">i still remember the first time you laughed at something stupid i said and i thought — okay, this one. it's this one.</textarea>
+      <p>i'm sorry about the distance, lovey. i know you hate it. i do too. but i would sit in every timezone, every silent night, every "goodnight text instead of goodnight kiss" — a hundred times over — just to get to the morning where i wake up next to you.</p>
+      <textarea class="editable" placeholder="anything else you want to say? 💜">you make me want to be better. not for you — because of you. and i think that's the most beautiful thing anyone has ever done for me.</textarea>
+      <p>i made this app for you, darling. everything in it — the flashcards, the notes, the reminders — i made it because i want to be part of your journey, even from far away. i want to be the one cheering you on when you study at 2am. i hope you use it every day.</p>
+      <p>thank you for staying. thank you for growing with me. i love you. <span class="hl">sosososos much.</span> 💜</p>
+    </div>
+    <div class="letter-sig">yours, always 🌸</div>
+  </div>
+</div>
+
+<!-- ══════════ SONGS ══════════ -->
+<div class="page" id="page-songs">
+  <div class="page-title">our songs 🎵</div>
+  <div class="page-sub">the ones that sound like us</div>
+  <div class="sp-box">
+    <div style="font-size:0.72rem;color:var(--ink3);margin-bottom:0.6rem;font-family:var(--font-b);">🎵 paste your spotify playlist link to embed it!</div>
+    <div class="sp-row"><input class="inp" id="spIn" placeholder="https://open.spotify.com/playlist/…"/><button class="btn btn-p btn-sm" style="white-space:nowrap;" onclick="embedSp()">embed</button></div>
+    <div id="spFrame"></div>
+  </div>
+  <div class="song-list" id="songList"></div>
+  <div class="card" style="margin-top:0.8rem;">
+    <h3>+ add a song</h3>
+    <div class="row2"><div class="fld"><label class="inp-label">song</label><input class="inp" id="sTitle" placeholder="song title..."/></div><div class="fld"><label class="inp-label">artist</label><input class="inp" id="sArtist" placeholder="artist name..."/></div></div>
+    <div class="fld"><label class="inp-label">why this song? 💜</label><textarea class="inp" id="sWhy" placeholder="this was playing when..." style="min-height:50px;"></textarea></div>
+    <button class="btn btn-p btn-full" onclick="addSong()">+ add to playlist</button>
+  </div>
+</div>
+
+<!-- ══════════ MEMORIES ══════════ -->
+<div class="page" id="page-memories">
+  <div class="page-title">our memories 📸</div>
+  <div class="page-sub">every little moment, saved forever 🌸</div>
+  <div class="scrap-add">
+    <h2>+ add a memory</h2>
+    <div class="photo-drop" onclick="document.getElementById('photoIn').click()">
+      <input type="file" id="photoIn" accept="image/*" onchange="handlePhoto(event)"/>
+      <div id="photoPh">🌸 tap to upload a photo</div>
+      <img id="photoThumb" class="photo-prev"/>
+    </div>
+    <div class="row2"><div class="fld"><label class="inp-label">caption</label><input class="inp" id="mCap" placeholder="our first call..."/></div><div class="fld"><label class="inp-label">note</label><input class="inp" id="mNote" placeholder="what made it special?"/></div></div>
+    <div class="fld"><label class="inp-label">stickers</label><div class="stk-row" id="stkRow"></div><div class="stk-prev" id="stkPrev">none selected</div></div>
+    <button class="btn btn-p btn-full" onclick="addMem()">save this memory 💜</button>
+  </div>
+  <div class="scrap-grid" id="scrapGrid"><div class="empty-state"><span class="ei">🐾</span><p>no memories yet — add your first one!</p></div></div>
+</div>
+
+<!-- ══════════ STUDY ══════════ -->
+<div class="page" id="page-study">
+  <div style="text-align:center;padding:0.5rem 0 0;">
+    <div style="font-family:var(--font-d);font-size:clamp(2rem,8vw,3.5rem);color:var(--accent);font-style:italic;line-height:1;">ruth's study corner 🩺</div>
+    <div style="font-family:var(--font-b);font-size:0.75rem;color:var(--ink3);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.3rem;margin-bottom:1.2rem;">study hard, baby 💜</div>
+  </div>
+
+  <div class="study-tabs">
+    <button class="stab on" onclick="switchStudy('flashcards',this)">🃏 flashcards</button>
+    <button class="stab" onclick="switchStudy('reviewer',this)">📖 reviewer</button>
+    <button class="stab" onclick="switchStudy('notes',this)">📓 notes</button>
+    <button class="stab" onclick="switchStudy('todos',this)">📋 to-do</button>
+    <button class="stab" onclick="switchStudy('reminders',this)">🔔 reminders</button>
+  </div>
+
+  <!-- ── FLASHCARDS ── -->
+  <div class="spane show" id="sp-flashcards">
+    <div class="fc-viewer" id="fcViewer">
+      <div class="fc-top">
+        <button class="btn btn-g btn-sm" onclick="closeDeck()">← back</button>
+        <span class="fc-name" id="fcName"></span>
+        <span class="fc-prog" id="fcProg"></span>
+      </div>
+      <div class="mode-tabs">
+        <button class="mtab on" id="mFlash" onclick="setMode('flash')">🃏 flashcard</button>
+        <button class="mtab" id="mMC" onclick="setMode('mc')">🔵 multiple choice</button>
+        <button class="mtab" id="mTF" onclick="setMode('tf')">✅ true/false</button>
+        <button class="mtab" id="mID" onclick="setMode('id')">✏️ identification</button>
+        <button class="mtab" id="mMatch" onclick="setMode('match')">🔗 matching</button>
+      </div>
+      <!-- flashcard -->
+      <div id="mFlashDiv">
+        <div class="progress-bar"><div class="progress-fill" id="fcFill"></div></div>
+        <div class="fc-wrap" id="fcWrap" onclick="flipFC()">
+          <div class="fc-inner"><div class="fc-face fc-front"><div><p id="fcQ"></p><div class="fc-hint">tap to flip 💜</div></div></div><div class="fc-face fc-back"><p id="fcA"></p></div></div>
+        </div>
+        <div class="fc-btns"><button class="btn btn-g btn-sm" onclick="prevFC()">← prev</button><button class="btn btn-p btn-sm" onclick="flipFC()">flip</button><button class="btn btn-g btn-sm" onclick="nextFC()">next →</button></div>
+      </div>
+      <!-- MC -->
+      <div id="mMCDiv" style="display:none;">
+        <div class="progress-bar"><div class="progress-fill" id="mcFill"></div></div>
+        <div class="quiz-box"><div class="quiz-meta">q <span id="mcN">1</span>/<span id="mcT">?</span></div><p class="quiz-q" id="mcQ"></p><div class="choices" id="mcChoices"></div><div class="quiz-fb" id="mcFB"></div><button class="btn btn-g btn-sm" id="mcNext" onclick="nextQ('mc')" style="margin-top:0.7rem;display:none;">next →</button></div>
+        <div class="quiz-score" id="mcScore" style="display:none;"><div class="score-big">done!! 🎉</div><div class="score-sub" id="mcScoreTxt"></div><button class="btn btn-p btn-sm" onclick="restartQ('mc')">try again</button></div>
+      </div>
+      <!-- TF -->
+      <div id="mTFDiv" style="display:none;">
+        <div class="progress-bar"><div class="progress-fill" id="tfFill"></div></div>
+        <div class="quiz-box"><div class="quiz-meta">q <span id="tfN">1</span>/<span id="tfT">?</span></div><p class="quiz-q" id="tfQ"></p><div style="display:flex;gap:0.6rem;justify-content:center;"><button class="btn btn-p" id="tfTrue" onclick="answerTF(true)" style="background:#388038;">✅ true</button><button class="btn btn-r" id="tfFalse" onclick="answerTF(false)">❌ false</button></div><div class="quiz-fb" id="tfFB"></div><button class="btn btn-g btn-sm" id="tfNext" onclick="nextQ('tf')" style="margin-top:0.7rem;display:none;">next →</button></div>
+        <div class="quiz-score" id="tfScore" style="display:none;"><div class="score-big">done!! 🎉</div><div class="score-sub" id="tfScoreTxt"></div><button class="btn btn-p btn-sm" onclick="restartQ('tf')">try again</button></div>
+      </div>
+      <!-- ID -->
+      <div id="mIDDiv" style="display:none;">
+        <div class="progress-bar"><div class="progress-fill" id="idFill"></div></div>
+        <div class="quiz-box"><div class="quiz-meta">q <span id="idN">1</span>/<span id="idT">?</span></div><p class="quiz-q" id="idQ"></p><input class="inp" id="idAns" placeholder="type your answer..." onkeydown="if(event.key==='Enter')checkID()" style="margin-bottom:0.5rem;"/><button class="btn btn-p btn-sm" onclick="checkID()">check</button><div class="quiz-fb" id="idFB"></div><button class="btn btn-g btn-sm" id="idNext" onclick="nextQ('id')" style="margin-top:0.7rem;display:none;">next →</button></div>
+        <div class="quiz-score" id="idScore" style="display:none;"><div class="score-big">done!! 🎉</div><div class="score-sub" id="idScoreTxt"></div><button class="btn btn-p btn-sm" onclick="restartQ('id')">try again</button></div>
+      </div>
+      <!-- Match -->
+      <div id="mMatchDiv" style="display:none;">
+        <div class="quiz-box"><div style="font-family:var(--font-h);font-size:1.1rem;color:var(--accent);margin-bottom:0.3rem;">🔗 match the pairs</div><div style="font-size:0.72rem;color:var(--ink3);margin-bottom:0.6rem;font-family:var(--font-b);">tap a question then tap its matching answer 💜</div><div id="matchArea" style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;"></div><div id="matchResult" style="display:none;text-align:center;margin-top:0.7rem;font-family:var(--font-h);font-size:1.2rem;color:var(--accent);"></div></div>
+      </div>
+      <!-- add card -->
+      <div class="card" style="margin-top:0.8rem;">
+        <h3>+ add a card to this deck</h3>
+        <div class="row2"><div class="fld"><label class="inp-label">question</label><input class="inp" id="addQ" placeholder="what is..."/></div><div class="fld"><label class="inp-label">answer</label><input class="inp" id="addA" placeholder="answer..."/></div></div>
+        <button class="btn btn-p btn-full" onclick="addCardToDeck()">+ add card</button>
+      </div>
+    </div>
+
+    <div id="deckListWrap">
+      <!-- battery exam highlight -->
+      <div style="background:linear-gradient(135deg,rgba(232,100,60,0.15),rgba(107,68,184,0.15));border:1px solid rgba(232,100,60,0.3);border-radius:var(--radius);padding:1.2rem;margin-bottom:1rem;">
+        <div style="font-family:var(--font-h);font-size:1.3rem;color:#e86040;margin-bottom:0.3rem;">🔥 battery exam prep</div>
+        <div style="font-size:0.78rem;color:var(--ink3);margin-bottom:0.8rem;font-family:var(--font-b);">comprehensive deck covering all nursing 1st–4th year topics for your battery exam, baby 🩺 i made this specifically for you!</div>
+        <div class="deck-grid" id="batWrap"></div>
+      </div>
+
+      <!-- ai generator -->
+      <div class="ai-box">
+        <h3>✨ ai flashcard generator</h3>
+        <p>type a topic, upload your pdf notes, or paste text — the ai will generate flashcards for you!</p>
+        <div class="tab-pills">
+          <div class="tab-pill on" id="gp1" onclick="switchGenTab(1)">📝 topic</div>
+          <div class="tab-pill" id="gp2" onclick="switchGenTab(2)">📄 pdf</div>
+          <div class="tab-pill" id="gp3" onclick="switchGenTab(3)">✍️ paste text</div>
+        </div>
+        <div class="gen-tab show" id="gt1">
+          <div class="row2"><div class="fld"><label class="inp-label">topic</label><input class="inp" id="aiTopic" placeholder="e.g. cardiac medications..."/></div><div class="fld"><label class="inp-label">cards</label><select class="inp" id="aiCount"><option value="5">5</option><option value="8" selected>8</option><option value="10">10</option><option value="15">15</option></select></div></div>
+          <button class="btn btn-p btn-full" onclick="genAI(1)">✨ generate!</button>
+        </div>
+        <div class="gen-tab" id="gt2">
+          <div style="border:1.5px dashed var(--border);border-radius:12px;padding:1rem;text-align:center;cursor:pointer;margin-bottom:0.7rem;" onclick="document.getElementById('pdfIn').click()">
+            <input type="file" id="pdfIn" accept=".pdf" style="display:none" onchange="handlePDF(event)"/>
+            <div style="font-size:1.6rem;margin-bottom:0.2rem;">📄</div>
+            <div style="font-size:0.78rem;color:var(--ink3);font-family:var(--font-b);" id="pdfLabel">tap to upload pdf notes!</div>
+          </div>
+          <div class="row2"><div class="fld"><label class="inp-label">deck name</label><input class="inp" id="pdfName" placeholder="e.g. NCM 103 notes"/></div><div class="fld"><label class="inp-label">cards</label><select class="inp" id="pdfCount"><option value="8">8</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option></select></div></div>
+          <button class="btn btn-p btn-full" onclick="genAI(2)">📄 generate from pdf!</button>
+        </div>
+        <div class="gen-tab" id="gt3">
+          <div class="fld"><label class="inp-label">paste notes</label><textarea class="inp" id="pasteText" placeholder="paste any text here and ai will make flashcards from it..." style="min-height:80px;"></textarea></div>
+          <div class="row2"><div class="fld"><label class="inp-label">deck name</label><input class="inp" id="pasteName" placeholder="my notes"/></div><div class="fld"><label class="inp-label">cards</label><select class="inp" id="pasteCount"><option value="5">5</option><option value="8" selected>8</option><option value="10">10</option></select></div></div>
+          <button class="btn btn-p btn-full" onclick="genAI(3)">✍️ generate!</button>
+        </div>
+        <div class="ai-loading" id="aiLoad"><span class="sp">⚙️</span><p id="aiLoadMsg" style="font-size:0.8rem;color:var(--ink3);font-family:var(--font-b);">generating...</p></div>
+      </div>
+
+      <!-- custom deck -->
+      <div class="card">
+        <h3>🛠️ build your own deck</h3>
+        <div class="fld"><label class="inp-label">deck name</label><input class="inp" id="dkName" placeholder="e.g. my pharmacology notes"/></div>
+        <div class="row2"><div class="fld"><label class="inp-label">question</label><input class="inp" id="dkQ" placeholder="type a question..."/></div><div class="fld"><label class="inp-label">answer</label><input class="inp" id="dkA" placeholder="type the answer..."/></div></div>
+        <button class="btn btn-g btn-sm" style="margin-bottom:0.7rem;" onclick="addTmpCard()">+ add card</button>
+        <div class="custom-cards" id="tmpCards"></div>
+        <button class="btn btn-p btn-full" onclick="saveCustomDeck()">💾 save deck!</button>
+      </div>
+
+      <!-- feu decks by year -->
+      <div id="feuWrap"></div>
+      <div id="customWrap"></div>
+    </div>
+  </div>
+
+  <!-- ── REVIEWER ── -->
+  <div class="spane" id="sp-reviewer">
+    <div style="font-family:var(--font-b);font-size:0.75rem;color:var(--ink3);margin-bottom:1rem;letter-spacing:0.05em;">
+      📖 tap any subject to open its reviewer notes 💜 — covers every FEU BSN subject year 1–4 + battery exam topics
+    </div>
+
+    <!-- reviewer search -->
+    <input class="inp" id="revSearch" placeholder="🔍 search reviewer topics..." oninput="filterReviewer()" style="margin-bottom:1rem;"/>
+
+    <!-- reviewer accordion list -->
+    <div id="reviewerList"></div>
+  </div>
+
+  <!-- ── NOTES ── -->
+  <div class="spane" id="sp-notes">
+    <div class="notes-layout">
+      <div class="nb-panel">
+        <h3>📚 notebooks</h3>
+        <div class="nb-list" id="nbList"></div>
+        <div class="fld"><label class="inp-label">+ new notebook</label><input class="inp" id="newNbName" placeholder="notebook name..."/></div>
+        <div style="display:flex;gap:0.3rem;flex-wrap:wrap;margin-bottom:0.5rem;" id="nbCP">
+          <div class="cp-dot on" data-c="#9b7fd4" style="background:#9b7fd4" onclick="pickNbC(this)"></div>
+          <div class="cp-dot" data-c="#ffd94a" style="background:#ffd94a" onclick="pickNbC(this)"></div>
+          <div class="cp-dot" data-c="#68b068" style="background:#68b068" onclick="pickNbC(this)"></div>
+          <div class="cp-dot" data-c="#e8b4a8" style="background:#e8b4a8" onclick="pickNbC(this)"></div>
+          <div class="cp-dot" data-c="#68a8d8" style="background:#68a8d8" onclick="pickNbC(this)"></div>
+          <div class="cp-dot" data-c="#e87878" style="background:#e87878" onclick="pickNbC(this)"></div>
+        </div>
+        <button class="btn btn-p btn-sm btn-full" onclick="addNb()">+ add</button>
+      </div>
+      <div class="note-panel">
+        <div id="noteListDiv">
+          <div class="note-top"><input class="search-inp" id="noteSearch" placeholder="🔍 search..." oninput="renderNotes()"/><button class="btn btn-p btn-sm" onclick="newNote()">+ new note</button></div>
+          <div class="notes-list" id="notesList"></div>
+          <div class="empty-state" id="notesEmpty" style="display:none;"><span class="ei">📓</span><p>no notes yet — start writing! 🌸</p></div>
+        </div>
+        <div class="note-write" id="noteWriteDiv">
+          <div class="note-write-top">
+            <button class="btn btn-g btn-sm" onclick="closeNote()">← back</button>
+            <input class="note-title-inp" id="noteTitleInp" placeholder="note title..." oninput="autoSave()"/>
+            <button class="btn btn-g btn-sm" onclick="pinNote()">📌</button>
+            <button class="btn btn-r btn-sm" onclick="delCurNote()">🗑️</button>
+          </div>
+          <div class="fmt-bar">
+            <button class="fmt-btn" onclick="fmt('bold')"><b>B</b></button>
+            <button class="fmt-btn" onclick="fmt('italic')"><i>I</i></button>
+            <button class="fmt-btn" onclick="fmt('underline')"><u>U</u></button>
+            <button class="fmt-btn" onclick="fmt('strikeThrough')">S̶</button>
+            <span style="color:var(--border);margin:0 2px;">|</span>
+            <button class="fmt-btn" onclick="fmt('insertUnorderedList')">• list</button>
+            <button class="fmt-btn" onclick="fmt('insertOrderedList')">1. list</button>
+            <button class="fmt-btn" onclick="fmt('formatBlock','h3')">H</button>
+            <button class="fmt-btn" onclick="fmt('formatBlock','p')">¶</button>
+            <span style="color:var(--border);margin:0 2px;">|</span>
+            <div class="cp-dot on" data-c="transparent" style="background:var(--surface2)" onclick="pickNoteC(this,event)"></div>
+            <div class="cp-dot" data-c="#ffd94a22" style="background:#ffd94a44" onclick="pickNoteC(this,event)"></div>
+            <div class="cp-dot" data-c="#9b7fd422" style="background:#9b7fd444" onclick="pickNoteC(this,event)"></div>
+            <div class="cp-dot" data-c="#68b06822" style="background:#68b06844" onclick="pickNoteC(this,event)"></div>
+            <div class="cp-dot" data-c="#e8b4a822" style="background:#e8b4a844" onclick="pickNoteC(this,event)"></div>
+          </div>
+          <div id="noteBody" contenteditable="true" class="note-body" placeholder="start writing... 🌸" oninput="autoSave()"></div>
+          <div class="autosave" id="autoSaveHint">changes saved automatically 💜</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TODOS ── -->
+  <div class="spane" id="sp-todos">
+    <div class="card">
+      <div class="todo-add-row">
+        <input class="inp" id="todoTxt" placeholder="add a task..." style="flex:2"/>
+        <select class="inp" id="todoCat" style="flex:1;min-width:90px;">
+          <option value="school">📚 school</option>
+          <option value="personal">💜 personal</option>
+          <option value="reminder">🔔 reminder</option>
+          <option value="urgent">🚨 urgent</option>
+        </select>
+        <button class="btn btn-p" onclick="addTodo()">+</button>
+      </div>
+      <div class="todo-list" id="todoList"><div class="empty-state" style="padding:1.5rem;"><span class="ei">📋</span><p>no tasks yet! 🌸</p></div></div>
+    </div>
+  </div>
+
+  <!-- ── REMINDERS ── -->
+  <div class="spane" id="sp-reminders">
+    <div class="card">
+      <div class="row2"><div class="fld"><label class="inp-label">reminder</label><input class="inp" id="remTxt" placeholder="e.g. submit case study"/></div><div class="fld"><label class="inp-label">date & time</label><input class="inp" type="datetime-local" id="remDate"/></div></div>
+      <button class="btn btn-p btn-full" onclick="addRem()">🔔 add reminder</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.45rem;margin-top:0.8rem;" id="remList"><div class="empty-state" style="padding:2rem;"><span class="ei">🔔</span><p>no reminders yet! 🌸</p></div></div>
+  </div>
+</div>
+
+<!-- ══════════ MESSAGES ══════════ -->
+<div class="page" id="page-messages">
+  <div class="page-title">messages for you 💜</div>
+  <div class="page-sub">your daily love notes & reminders — edit these anytime, baby</div>
+
+  <div class="card" style="margin-bottom:0.8rem;">
+    <div style="font-family:var(--font-h);font-size:1.1rem;color:var(--accent);margin-bottom:0.3rem;">how to add to home screen 📱</div>
+    <div style="font-size:0.8rem;color:var(--ink2);line-height:1.8;font-family:var(--font-b);">
+      1. open in <b>safari</b> on your iphone or ipad<br/>
+      2. tap the <b>share button</b> ↑<br/>
+      3. tap <b>"add to home screen"</b><br/>
+      4. name it <b>"for ruth 💜"</b> → tap add<br/>
+      5. it'll appear like a real app on your home screen!! 🎉<br/><br/>
+      <span style="color:var(--accent2);">✨ upload to netlify.com/drop first to get a shareable link!</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>✏️ edit your messages</h3>
+    <div style="font-size:0.72rem;color:var(--ink3);margin-bottom:0.8rem;font-family:var(--font-b);">these rotate in the floating 💜 widget! tap any message to edit it directly.</div>
+    <div class="msg-list-edit" id="msgListEdit"></div>
+    <div class="fld"><label class="inp-label">add a new message</label><input class="inp" id="newMsgIn" placeholder="hi baby!! just wanted you to know..."/></div>
+    <div class="fld">
+      <label class="inp-label">category</label>
+      <select class="inp" id="newMsgCat">
+        <option value="💜">💜 love</option>
+        <option value="🍱">🍱 eat!</option>
+        <option value="💧">💧 drink water</option>
+        <option value="😴">😴 rest</option>
+        <option value="🌟">🌟 cheer up</option>
+        <option value="📝">📝 exam day</option>
+        <option value="😂">😂 silly</option>
+        <option value="🧠">🧠 fun fact</option>
+      </select>
+    </div>
+    <button class="btn btn-p btn-full" onclick="addMsg()">+ add message</button>
+  </div>
+</div>
+
+<script>
+const LS=(k,d)=>{try{const v=localStorage.getItem(k);return v!==null?JSON.parse(v):d;}catch(e){return d;}};
+const LSS=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}};
+const ESC=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+
+/* ── PERFORMANCE: pause animations when tab not visible ── */
+document.addEventListener('visibilitychange',()=>{
+  const orbs=document.querySelectorAll('.orb');
+  orbs.forEach(o=>o.style.animationPlayState=document.hidden?'paused':'running');
+});
+/* ── THEME ── */
+function setTheme(t,el){document.body.dataset.theme=t;document.querySelectorAll('.tdot').forEach(d=>d.classList.remove('on'));el.classList.add('on');LSS('app_theme',t);}
+const savedTheme=LS('app_theme',null);
+if(savedTheme){document.body.dataset.theme=savedTheme;document.querySelectorAll('.tdot').forEach(d=>{d.classList.toggle('on',d.dataset.t===savedTheme);});}
+
+/* ── WELCOME ── */
+function uploadWIcon(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{const el=document.getElementById('wIconEl');el.className='w-icon-img';el.tagName==='IMG'?el.src=ev.target.result:el.outerHTML=`<img class="w-icon-img" src="${ev.target.result}" id="wIconEl"/>`;const img=document.createElement('img');img.className='w-icon-img';img.src=ev.target.result;img.id='wIconEl';document.getElementById('wIconEl').replaceWith(img);LSS('app_wicon',ev.target.result);};r.readAsDataURL(f);}
+const savedWIcon=LS('app_wicon',null);
+if(savedWIcon){const img=document.createElement('img');img.className='w-icon-img';img.src=savedWIcon;img.id='wIconEl';document.getElementById('wIconEl').replaceWith(img);}
+function openApp(){document.getElementById('welcome').classList.add('gone');setTimeout(()=>document.getElementById('welcome').style.display='none',950);}
+
+/* ── NAV ── */
+function showPage(name,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));document.getElementById('page-'+name).classList.add('show');btn.classList.add('on');}
+
+/* ── SNOOPY ICONS ── */
+function uploadHeroSnoopy(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{const wrap=document.getElementById('heroSnoopyWrap');wrap.innerHTML=`<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:contain;"/><input type="file" id="heroSnoopyIn" accept="image/*" onchange="uploadHeroSnoopy(event)" style="display:none"/>`;wrap.onclick=()=>document.getElementById('heroSnoopyIn').click();LSS('app_heroicon',ev.target.result);};r.readAsDataURL(f);}
+const savedHeroIcon=LS('app_heroicon',null);
+if(savedHeroIcon){const wrap=document.getElementById('heroSnoopyWrap');wrap.innerHTML=`<img src="${savedHeroIcon}" style="width:100%;height:100%;object-fit:contain;"/><input type="file" id="heroSnoopyIn" accept="image/*" onchange="uploadHeroSnoopy(event)" style="display:none"/>`;wrap.onclick=()=>document.getElementById('heroSnoopyIn').click();}
+
+/* ── COUNTDOWN ── */
+/* ── COUNTDOWN + TOGETHER COUNTER + AUTO NOTIFICATIONS ── */
+const START_DATE = new Date('2025-04-08T00:00:00');
+
+function getNextAnniversary(){
+  const now = new Date();
+  let year = now.getFullYear();
+  let next = new Date(year, 3, 8, 0, 0, 0); // april 8
+  if(now >= next) next = new Date(year+1, 3, 8, 0, 0, 0);
+  return next;
+}
+
+const togetherPhrases = [
+  "and every single day has been worth it 💜",
+  "that's a lot of love, lovey 🌸",
+  "each day better than the last 💜",
+  "still us. always us 🐾",
+  "and i'd choose you again every time 💜",
+  "one day closer to waking up next to you 🌙",
+];
+
+function tick(){
+  const now = new Date();
+
+  // ── TOGETHER COUNTER ──
+  const diff2 = now - START_DATE;
+  const td = Math.floor(diff2/86400000);
+  const th = Math.floor((diff2%86400000)/3600000);
+  const tm = Math.floor((diff2%3600000)/60000);
+  const ts = Math.floor((diff2%60000)/1000);
+  const tc = document.getElementById('togetherCount');
+  if(tc) tc.innerHTML = `
+    <div class="cd-box" style="border-color:rgba(232,213,163,0.3);"><span class="cd-n" style="color:var(--gold);">${td}</span><span class="cd-l">days</span></div>
+    <div class="cd-box"><span class="cd-n">${th}</span><span class="cd-l">hrs</span></div>
+    <div class="cd-box"><span class="cd-n">${tm}</span><span class="cd-l">min</span></div>
+    <div class="cd-box"><span class="cd-n">${ts}</span><span class="cd-l">sec</span></div>`;
+  const tp = document.getElementById('togetherPhrase');
+  if(tp) tp.textContent = togetherPhrases[Math.floor(td/7)%togetherPhrases.length];
+
+  // ── NEXT ANNIVERSARY COUNTDOWN ──
+  const next = getNextAnniversary();
+  const diff = next - now;
+  const el = document.getElementById('cd');
+  const lbl = document.getElementById('cdLabel');
+  if(!el) return;
+
+  if(diff <= 0){
+    // it IS the anniversary today!! 🎉
+    el.innerHTML = '<div class="cd-box"><span class="cd-n" style="font-size:1.4rem;">🎉</span><span class="cd-l">today!!</span></div>';
+    if(lbl) lbl.textContent = "happy anniversary!! 🎉💜";
+  } else {
+    const d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+    const yr = next.getFullYear();
+    if(lbl) lbl.textContent = `next anniversary (april 8, ${yr}) in`;
+    el.innerHTML=`<div class="cd-box"><span class="cd-n">${d}</span><span class="cd-l">days</span></div><div class="cd-box"><span class="cd-n">${h}</span><span class="cd-l">hrs</span></div><div class="cd-box"><span class="cd-n">${m}</span><span class="cd-l">min</span></div><div class="cd-box"><span class="cd-n">${s}</span><span class="cd-l">sec</span></div>`;
+  }
+}
+tick();setInterval(tick,1000);
+
+/* ── BROWSER NOTIFICATIONS ── */
+const NOTIF_MSGS = [
+  {title:"hi baby!! 🍱",body:"make sure kumain ka na ha!! please don't skip meals 💜"},
+  {title:"hey lovey 💧",body:"drink water na please!! your brain needs it!!"},
+  {title:"baby 😴",body:"make sure to rest okii!! please sleep well 💜"},
+  {title:"hi darling 💜",body:"just wanted you to know i love you so much today!!"},
+  {title:"study break!! 🩺",body:"you've been studying hard. take a 5 minute break baby!!"},
+  {title:"baby did you know?? 🧠",body:"nurses who stay hydrated perform 20% better!! drink water NOW 💧"},
+  {title:"hey ruth!! 🌸",body:"you are doing so amazing. i am so proud of you every single day 💜"},
+  {title:"reminder from me 💜",body:"eat, drink water, rest. in that order. i mean it!! 🐾"},
+  {title:"good morning baby ☀️",body:"today is going to be a great day!! you got this 💜"},
+  {title:"lovey 🌙",body:"don't study too late tonight okay!! your rest matters too 💜"},
+  {title:"EXAM DAY HYPE!! 📝",body:"you studied for this!! you KNOW this!! go show that exam who's boss 💪🔥"},
+  {title:"hi baby 😂",body:"i miss you so much it's actually embarrassing. anyway!! love you!!"},
+];
+let notifIdx = parseInt(localStorage.getItem('app_notif_idx')||'0') % NOTIF_MSGS.length;
+
+async function setupNotifications(){
+  if(!('Notification' in window)) return;
+  if(Notification.permission === 'default'){
+    const perm = await Notification.requestPermission();
+    if(perm !== 'granted') return;
+  }
+  if(Notification.permission === 'granted'){
+    // show a new message every 2 hours
+    scheduleNextNotif();
+  }
+}
+
+function scheduleNextNotif(){
+  const TWO_HOURS = 2 * 60 * 60 * 1000;
+  const lastTime = parseInt(localStorage.getItem('app_last_notif')||'0');
+  const now = Date.now();
+  const wait = Math.max(0, TWO_HOURS - (now - lastTime));
+  setTimeout(()=>{
+    showNotif();
+    setInterval(showNotif, TWO_HOURS);
+  }, wait);
+}
+
+function showNotif(){
+  if(Notification.permission !== 'granted') return;
+  const msg = NOTIF_MSGS[notifIdx % NOTIF_MSGS.length];
+  notifIdx++;
+  localStorage.setItem('app_notif_idx', notifIdx);
+  localStorage.setItem('app_last_notif', Date.now());
+  try{
+    new Notification(msg.title, {
+      body: msg.body,
+      icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💜</text></svg>',
+      badge: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💜</text></svg>',
+    });
+  }catch(e){}
+}
+
+// request notifications on first interaction
+document.addEventListener('click', ()=>{setupNotifications();}, {once:true});
+setupNotifications();
+
+/* ── STRIP ── */
+function updateStrip(){const v=document.getElementById('stripInp').value;document.getElementById('heroStrip').textContent=v;LSS('app_strip',v);}
+const savedStrip=LS('app_strip',null);
+if(savedStrip){document.getElementById('stripInp').value=savedStrip;document.getElementById('heroStrip').textContent=savedStrip;}
+
+/* ── POLAROIDS ── */
+const polLabels=['us 💜','first day','favorites ✨','silly moments','always','more 🌸'];
+const polRots=[-5,3,-4,6,-2,4];
+const polData=LS('app_pols',{});
+const polNotes=LS('app_pol_notes',{});
+
+function buildPols(){
+  const g=document.getElementById('heroPols');g.innerHTML='';
+  for(let i=0;i<6;i++){
+    const wrap=document.createElement('div');
+    wrap.className='pol';
+    wrap.style.transform=`rotate(${polRots[i]}deg)`;
+    wrap.style.position='relative';
+
+    const inner=document.createElement('div');inner.className='pol-inner';
+
+    if(polData[i]){
+      const img=document.createElement('img');img.src=polData[i];inner.appendChild(img);
+
+      // hover overlay — change photo
+      const ov=document.createElement('div');
+      ov.style.cssText='position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;opacity:0;transition:opacity 0.2s;cursor:pointer;z-index:3;';
+      ov.innerHTML='<span style="font-size:1rem">📸</span><span style="font-size:0.52rem;color:white;font-family:var(--font-b);">change</span>';
+      inner.appendChild(ov);
+      inner.onmouseenter=()=>ov.style.opacity='1';
+      inner.onmouseleave=()=>ov.style.opacity='0';
+      inner.addEventListener('touchstart',()=>ov.style.opacity='1',{passive:true});
+      inner.addEventListener('touchend',()=>setTimeout(()=>ov.style.opacity='0',1500),{passive:true});
+
+      // × remove button
+      const del=document.createElement('div');
+      del.style.cssText='position:absolute;top:-6px;right:-6px;background:#e8392a;color:white;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:0.58rem;cursor:pointer;z-index:10;box-shadow:0 1px 4px rgba(0,0,0,0.5);font-weight:700;line-height:1;';
+      del.textContent='×';del.title='remove photo';
+      del.onclick=e=>{e.stopPropagation();if(confirm('remove this photo?')){delete polData[i];try{LSS('app_pols',polData);}catch(e){}buildPols();}};
+      wrap.appendChild(del);
+
+      const inp2=document.createElement('input');inp2.type='file';inp2.accept='image/*';inp2.style.display='none';
+      inp2.onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{compressImage(ev.target.result,600,480,0.75,c=>{polData[i]=c;try{LSS('app_pols',polData);}catch(e){}buildPols();});};r.readAsDataURL(f);};
+      inner.appendChild(inp2);
+      ov.onclick=e=>{e.stopPropagation();inp2.click();};
+      wrap.onclick=()=>{};
+    } else {
+      const ph=document.createElement('div');ph.className='ph';ph.textContent='📸 tap to add';inner.appendChild(ph);
+      const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
+      inp.onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{compressImage(ev.target.result,600,480,0.75,c=>{polData[i]=c;try{LSS('app_pols',polData);}catch(e){}buildPols();});};r.readAsDataURL(f);};
+      inner.appendChild(inp);
+      wrap.onclick=()=>inp.click();
+    }
+
+    // editable caption
+    const lbl=document.createElement('div');
+    lbl.className='pol-lbl';
+    lbl.contentEditable='true';
+    lbl.style.cssText='position:absolute;bottom:5px;left:2px;right:2px;text-align:center;font-family:var(--font-h);font-size:0.72rem;color:#888;outline:none;cursor:text;min-height:1rem;';
+    lbl.textContent=polNotes[i]||polLabels[i];
+    lbl.title='tap to edit caption';
+    lbl.onblur=()=>{polNotes[i]=lbl.textContent.trim();try{LSS('app_pol_notes',polNotes);}catch(e){}};
+    lbl.onclick=e=>e.stopPropagation();
+
+    wrap.appendChild(inner);
+    wrap.appendChild(lbl);
+    g.appendChild(wrap);
+  }
+}
+buildPols();
+
+/* ── LOVE WIDGET ── */
+const DEFAULT_MSGS=[
+  {txt:"hi baby!! make sure kumain ka ha, please don't skip meals 🍱",icon:"🍱"},
+  {txt:"hi baby i love uuu so much, like sosososo much 💜",icon:"💜"},
+  {txt:"i miss you baby. BABYYYYYYY hiii wyd 🥺",icon:"🥺"},
+  {txt:"baby make sure to rest okii!! please sleep 😴",icon:"😴"},
+  {txt:"hi lovey!! drink water na please 💧 your brain needs it!!",icon:"💧"},
+  {txt:"hey darling 🌸 you are doing amazing, i am so proud of you!!",icon:"🌟"},
+  {txt:"baby did you know?? the heart beats 100,000 times a day. that's how many times i think about you 🩺",icon:"🧠"},
+  {txt:"EXAM DAY!! you studied for this!! you know this!! go show that exam who's boss 💪",icon:"📝"},
+  {txt:"hi baby!! don't pressure yourself too much okii 🌷",icon:"🌷"},
+  {txt:"kumain ka na ba?? 👀 snoopy is watching. eat. now. please 🐾",icon:"🐾"},
+  {txt:"i miss you so much it's actually embarrassing. anyway!! have a great day!! 😂",icon:"😂"},
+  {txt:"you're going to be the best nurse, ruth. i already know it 🩺💜",icon:"🩺"},
+  {txt:"baby did you know?? nurses who drink enough water have better concentration!! so that's literally a medical reason to hydrate 💧",icon:"💧"},
+  {txt:"hi baby!! i know the ldr is hard but i'm building my way to you every single day 💜",icon:"🌙"},
+  {txt:"reminder: you don't have to be perfect. you just have to try. and you always try 💜",icon:"🌸"},
+  {txt:"did you know?? your brain consolidates what you studied while you sleep!! so sleeping = studying 🧠",icon:"🧠"},
+];
+let msgs=LS('app_msgs',DEFAULT_MSGS);
+let wIdx=0;let widgetHidden=false;
+function renderWidget(){if(!msgs.length)return;const m=msgs[wIdx];document.getElementById('lwIcon').textContent=m.icon||'💜';document.getElementById('lwMsg').textContent=m.txt;}
+function nextWidget(){wIdx=(wIdx+1)%msgs.length;renderWidget();}
+function toggleWidget(){widgetHidden=!widgetHidden;document.getElementById('loveWidget').classList.toggle('widget-hidden',widgetHidden);}
+setInterval(()=>{wIdx=(wIdx+1)%msgs.length;renderWidget();},30000);
+renderWidget();
+function renderMsgListEdit(){const l=document.getElementById('msgListEdit');l.innerHTML=msgs.map((m,i)=>`<div class="msg-edit-item"><span>${m.icon||'💜'}</span><div class="mei-txt" contenteditable="true" onblur="msgs[${i}].txt=this.textContent.trim();LSS('app_msgs',msgs);">${ESC(m.txt)}</div><button class="mei-del" onclick="msgs.splice(${i},1);LSS('app_msgs',msgs);renderMsgListEdit();">✕</button></div>`).join('');}
+renderMsgListEdit();
+function addMsg(){const t=document.getElementById('newMsgIn').value.trim();if(!t)return;const icon=document.getElementById('newMsgCat').value;msgs.push({txt:t,icon});LSS('app_msgs',msgs);renderMsgListEdit();document.getElementById('newMsgIn').value='';confetti();}
+
+/* ── SPOTIFY ── */
+function embedSp(){const raw=document.getElementById('spIn').value.trim();const m=raw.match(/spotify\.com\/(playlist|album|track)\/([a-zA-Z0-9]+)/);if(!m){alert('paste a valid spotify link!! 🎵');return;}document.getElementById('spFrame').innerHTML=`<iframe src="https://open.spotify.com/embed/${m[1]}/${m[2]}" width="100%" height="352" frameborder="0" allow="encrypted-media" style="border-radius:12px;margin-top:0.8rem;"></iframe>`;}
+
+/* ── SONGS ── */
+let songs=LS('app_songs',[]);
+const saveSongs=()=>LSS('app_songs',songs);
+function renderSongs(){const l=document.getElementById('songList');l.innerHTML=songs.map((s,i)=>`<div class="song-card"><div class="song-n">${String(i+1).padStart(2,'0')}</div><div class="song-info"><div class="song-title">${ESC(s.title)}</div><div class="song-artist">${ESC(s.artist)}</div>${s.why?`<div class="song-why">${ESC(s.why)}</div>`:''}</div><button class="song-del" onclick="songs.splice(${songs.indexOf(s)},1);saveSongs();renderSongs();">✕</button></div>`).join('');}
+function addSong(){const t=document.getElementById('sTitle').value.trim();if(!t){alert('add a song title!! 🎵');return;}songs.push({id:Date.now(),title:t,artist:document.getElementById('sArtist').value.trim(),why:document.getElementById('sWhy').value.trim()});saveSongs();renderSongs();document.getElementById('sTitle').value='';document.getElementById('sArtist').value='';document.getElementById('sWhy').value='';confetti();}
+renderSongs();
+
+/* ── SCRAPBOOK ── */
+const STKS=['💜','🌸','✨','🎉','🥂','💕','🌙','⭐','🦋','🌺','💫','🎀','🍓','🌈','🥰','😘','🤍','🌷','🎊','💝','🐾'];
+let picked=[];let photoData=null;
+let mems=LS('app_mems',[]);
+document.getElementById('stkRow').innerHTML=STKS.map(s=>`<span class="stk" onclick="toggleStk(this,'${s}')">${s}</span>`).join('');
+function toggleStk(el,s){const i=picked.indexOf(s);if(i>-1){picked.splice(i,1);el.classList.remove('on');}else{picked.push(s);el.classList.add('on');}document.getElementById('stkPrev').textContent=picked.length?'selected: '+picked.join(' '):'none selected';}
+function compressImage(src,maxW,maxH,quality,cb){
+  const img=new Image();img.onload=()=>{
+    const canvas=document.createElement('canvas');
+    let w=img.width,h=img.height;
+    if(w>maxW){h=Math.round(h*maxW/w);w=maxW;}
+    if(h>maxH){w=Math.round(w*maxH/h);h=maxH;}
+    canvas.width=w;canvas.height=h;
+    canvas.getContext('2d').drawImage(img,0,0,w,h);
+    cb(canvas.toDataURL('image/jpeg',quality));
+  };img.src=src;
+}
+function handlePhoto(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{
+  compressImage(ev.target.result,800,600,0.75,compressed=>{
+    photoData=compressed;
+    const t=document.getElementById('photoThumb');t.src=compressed;t.style.display='block';
+    document.getElementById('photoPh').style.display='none';
+  });
+};r.readAsDataURL(f);}
+function addMem(){const cap=document.getElementById('mCap').value.trim(),note=document.getElementById('mNote').value.trim();if(!cap&&!photoData){alert('add a photo or caption!! 💜');return;}mems.unshift({id:Date.now(),photo:photoData,caption:cap||'a precious moment 💜',note,stickers:[...picked]});LSS('app_mems',mems);renderMems();photoData=null;document.getElementById('mCap').value='';document.getElementById('mNote').value='';document.getElementById('photoThumb').style.display='none';document.getElementById('photoThumb').src='';document.getElementById('photoIn').value='';document.getElementById('photoPh').style.display='block';picked=[];document.querySelectorAll('.stk').forEach(s=>s.classList.remove('on'));document.getElementById('stkPrev').textContent='none selected';confetti();}
+function delMem(id){mems=mems.filter(m=>m.id!==id);LSS('app_mems',mems);renderMems();}
+function renderMems(){const g=document.getElementById('scrapGrid');if(!mems.length){g.innerHTML='<div class="empty-state"><span class="ei">🐾</span><p>no memories yet!</p></div>';return;}g.innerHTML=mems.map(m=>`<div class="mem-card"><div class="mem-tape"></div><button class="mem-del" onclick="delMem(${m.id})">✕</button>${m.photo?`<img class="mem-photo" src="${m.photo}"/>`:`<div class="mem-ph">${m.stickers[0]||'💜'}</div>`}${m.stickers.length?`<div class="mem-stk">${m.stickers.join(' ')}</div>`:''}<div class="mem-cap">${ESC(m.caption)}</div>${m.note?`<div class="mem-note">${ESC(m.note)}</div>`:''}</div>`).join('');}
+renderMems();
+
+/* ════════════════════
+   FLASHCARD DATA — FEU + BATTERY EXAM
+════════════════════ */
+const BAT_DECKS=[
+  {name:"vital signs & assessment",icon:"❤️",cards:[{q:"normal adult HR?",a:"60–100 bpm"},{q:"normal RR?",a:"12–20 breaths/min"},{q:"normal BP?",a:"<120/80 mmHg"},{q:"normal temp (oral)?",a:"36.5–37.5°C"},{q:"normal SpO2?",a:"95–100%"},{q:"PERRLA?",a:"pupils equal, round, reactive to light and accommodation"},{q:"normal capillary refill?",a:"<2 seconds"},{q:"tachycardia?",a:">100 bpm"},{q:"bradycardia?",a:"<60 bpm"},{q:"hypotension?",a:"BP <90/60 mmHg"},{q:"physical exam order (abdomen)?",a:"inspect, AUSCULTATE, percuss, palpate"},{q:"standard physical exam order?",a:"inspect, palpate, percuss, auscultate"},{q:"what is turgor?",a:"skin elasticity — pinch, should return <2 seconds"}]},
+  {name:"pharmacology essentials",icon:"💊",cards:[{q:"beta blockers end in?",a:"-olol (metoprolol, atenolol)"},{q:"ACE inhibitors end in?",a:"-pril (lisinopril, enalapril)"},{q:"statins end in?",a:"-statin (atorvastatin, simvastatin)"},{q:"ARBs end in?",a:"-sartan (losartan, valsartan)"},{q:"antidote for heparin?",a:"protamine sulfate"},{q:"antidote for warfarin?",a:"vitamin K"},{q:"antidote for acetaminophen?",a:"N-acetylcysteine"},{q:"antidote for MgSO4 toxicity?",a:"calcium gluconate"},{q:"antidote for opioids?",a:"naloxone (narcan)"},{q:"antidote for benzodiazepines?",a:"flumazenil"},{q:"therapeutic INR for warfarin?",a:"2.0–3.0"},{q:"digoxin nursing check?",a:"apical pulse 1 full min before giving; hold if <60 bpm"},{q:"6 rights of medication?",a:"right patient, drug, dose, route, time, documentation"}]},
+  {name:"lab values",icon:"🧪",cards:[{q:"normal sodium (Na+)?",a:"135–145 mEq/L"},{q:"normal potassium (K+)?",a:"3.5–5.0 mEq/L"},{q:"normal calcium (Ca2+)?",a:"8.5–10.5 mg/dL"},{q:"normal hemoglobin (female)?",a:"12–16 g/dL"},{q:"normal hemoglobin (male)?",a:"13.5–17.5 g/dL"},{q:"normal fasting blood glucose?",a:"70–100 mg/dL"},{q:"normal WBC?",a:"4,500–11,000 cells/mcL"},{q:"normal platelets?",a:"150,000–400,000/mcL"},{q:"normal creatinine?",a:"0.6–1.2 mg/dL"},{q:"critical potassium levels?",a:"<2.5 or >6.5 mEq/L — notify MD!"},{q:"normal BUN?",a:"7–20 mg/dL"}]},
+  {name:"ABGs & fluid/electrolytes",icon:"🫁",cards:[{q:"normal pH?",a:"7.35–7.45"},{q:"normal PaCO2?",a:"35–45 mmHg"},{q:"normal HCO3?",a:"22–26 mEq/L"},{q:"normal PaO2?",a:"80–100 mmHg"},{q:"respiratory acidosis?",a:"pH <7.35, PaCO2 >45 — hypoventilation"},{q:"respiratory alkalosis?",a:"pH >7.45, PaCO2 <35 — hyperventilation"},{q:"metabolic acidosis?",a:"pH <7.35, HCO3 <22 — diarrhea, DKA, renal failure"},{q:"metabolic alkalosis?",a:"pH >7.45, HCO3 >26 — vomiting, NG suction, antacids"},{q:"signs of hypokalemia?",a:"muscle weakness, cramps, irregular HR, constipation"},{q:"signs of hyperkalemia?",a:"peaked T waves, muscle weakness, bradycardia, cardiac arrest"},{q:"normal urine output?",a:"0.5–1 mL/kg/hour"}]},
+  {name:"priority & delegation",icon:"⚡",cards:[{q:"ABC priority order?",a:"airway → breathing → circulation"},{q:"Maslow's top priority?",a:"physiological needs first"},{q:"who do you see first — chest pain or rash?",a:"chest pain — always ABC first"},{q:"what can RN delegate to CNA?",a:"vital signs, bathing, ambulation of stable patients, feeding"},{q:"what CANNOT be delegated?",a:"assessment, teaching, care planning, medications, evaluation"},{q:"NCLEX priority tip?",a:"when in doubt — address airway first!"},{q:"SBAR = ?",a:"situation, background, assessment, recommendation"},{q:"5 rights of delegation?",a:"right task, circumstances, person, direction, supervision"}]},
+  {name:"maternal & child health",icon:"👶",cards:[{q:"normal FHR?",a:"110–160 bpm"},{q:"Nagele's rule?",a:"LMP + 7 days − 3 months + 1 year"},{q:"4 Ps of labor?",a:"powers, passageway, passenger, psyche"},{q:"APGAR timing?",a:"1 min and 5 min after birth"},{q:"normal APGAR?",a:"7–10 normal; 4–6 moderate; 0–3 severe"},{q:"lochia rubra?",a:"red/bloody, days 1–3 postpartum"},{q:"preeclampsia triad?",a:"hypertension, proteinuria, edema after 20 weeks"},{q:"placenta previa vs abruption?",a:"previa = painless bright red; abruption = painful dark red, board-like abdomen"}]},
+  {name:"psychiatric nursing",icon:"🧠",cards:[{q:"Peplau's phases?",a:"orientation, identification, exploitation, resolution"},{q:"denial?",a:"refusing to acknowledge a painful reality"},{q:"projection?",a:"attributing own unacceptable feelings to others"},{q:"rationalization?",a:"creating logical reasons to justify unacceptable behavior"},{q:"suicidal patient — priority?",a:"safety first — remove means, stay with patient, notify team"},{q:"positive symptoms of schizophrenia?",a:"hallucinations, delusions, disorganized speech"},{q:"negative symptoms of schizophrenia?",a:"flat affect, poverty of speech, social withdrawal"}]},
+  {name:"critical care & emergency",icon:"🚨",cards:[{q:"CPR rate (adult)?",a:"100–120 compressions/min"},{q:"CPR depth (adult)?",a:"≥2 inches (5 cm)"},{q:"compression:ventilation ratio?",a:"30:2 (no advanced airway)"},{q:"Cushing's triad = increased ICP?",a:"hypertension, bradycardia, irregular respirations"},{q:"4 types of shock?",a:"hypovolemic, distributive, cardiogenic, obstructive"},{q:"first priority in emergency?",a:"airway"},{q:"START triage: red?",a:"immediate — life-threatening but survivable"},{q:"START triage: black?",a:"expectant — unsurvivable or deceased"},{q:"START triage: yellow?",a:"delayed — serious but can wait"},{q:"START triage: green?",a:"minor — walking wounded"}]},
+  {name:"community health",icon:"🌍",cards:[{q:"primary prevention?",a:"health promotion before illness occurs"},{q:"secondary prevention?",a:"early detection and treatment"},{q:"tertiary prevention?",a:"rehabilitation, prevent complications"},{q:"chain of infection?",a:"agent → reservoir → portal of exit → transmission → portal of entry → host"},{q:"most effective way to break chain?",a:"hand hygiene"},{q:"incidence vs prevalence?",a:"incidence = new cases; prevalence = all existing cases"},{q:"herd immunity?",a:"indirect protection when large % of population is immune"}]},
+  {name:"leadership & ethics",icon:"👩‍⚕️",cards:[{q:"4 principles of bioethics?",a:"autonomy, beneficence, non-maleficence, justice"},{q:"autonomy?",a:"patient's right to make own healthcare decisions"},{q:"beneficence?",a:"do good — act in patient's best interest"},{q:"non-maleficence?",a:"do no harm"},{q:"justice?",a:"fair, equal treatment for all"},{q:"accountability?",a:"accepting responsibility for own actions and outcomes"},{q:"transformational leadership?",a:"motivates staff through vision and inspiration"}]},
+];
+
+const FEU_DECKS={
+  "1st year 🔴":[
+    {name:"anatomy & physiology",icon:"🫀",cards:[{q:"11 organ systems?",a:"integumentary, skeletal, muscular, nervous, endocrine, cardiovascular, lymphatic, respiratory, digestive, urinary, reproductive"},{q:"homeostasis?",a:"body's ability to maintain stable internal environment"},{q:"4 tissue types?",a:"epithelial, connective, muscle, nervous"},{q:"sagittal plane?",a:"divides body into left and right"},{q:"afferent vs efferent?",a:"afferent = toward CNS (sensory); efferent = away from CNS (motor)"}]},
+    {name:"theoretical foundations (NCM 100)",icon:"📖",cards:[{q:"founder of modern nursing?",a:"florence nightingale"},{q:"ADPIE?",a:"assessment, diagnosis, planning, implementation, evaluation"},{q:"watson's theory?",a:"theory of human caring — 10 carative factors"},{q:"orem's theory?",a:"self-care deficit theory"},{q:"nursing metaparadigm?",a:"person, environment, health, nursing"}]},
+    {name:"health assessment (NCM 101)",icon:"🔍",cards:[{q:"PERRLA?",a:"pupils equal, round, reactive to light and accommodation"},{q:"normal cap refill?",a:"<2 seconds"},{q:"objective vs subjective data?",a:"objective = measurable; subjective = reported by patient"}]},
+    {name:"retorika",icon:"🗣️",cards:[{q:"3 modes of persuasion?",a:"ethos (credibility), pathos (emotion), logos (logic)"},{q:"ethos?",a:"appeal to speaker's credibility"},{q:"pathos?",a:"appeal to audience emotions"},{q:"logos?",a:"appeal to logic and reason"}]},
+  ],
+  "2nd year 🟡":[
+    {name:"fundamentals (NCM 103)",icon:"🩺",cards:[{q:"6 rights of medication?",a:"right patient, drug, dose, route, time, documentation"},{q:"asepsis?",a:"absence of pathogenic microorganisms"},{q:"medical vs surgical asepsis?",a:"medical = reduce organisms; surgical = sterile technique, eliminate all"},{q:"normal urine output?",a:"0.5–1 mL/kg/hr"},{q:"PES nursing diagnosis?",a:"problem + related to + as evidenced by"}]},
+    {name:"pharmacology (NCM 106)",icon:"💊",cards:[{q:"beta blockers?",a:"-olol"},{q:"ACE inhibitors?",a:"-pril"},{q:"statins?",a:"-statin"},{q:"heparin antidote?",a:"protamine sulfate"},{q:"warfarin antidote?",a:"vitamin K"},{q:"therapeutic INR?",a:"2.0–3.0"}]},
+    {name:"community health I (NCM 104)",icon:"🏘️",cards:[{q:"primary prevention?",a:"health promotion before illness"},{q:"secondary prevention?",a:"early detection and treatment"},{q:"tertiary prevention?",a:"rehabilitation"},{q:"PHC 8 elements?",a:"education, nutrition, water/sanitation, MCH/FP, immunization, endemic disease control, essential drugs, treatment of common diseases"}]},
+    {name:"mother & child (NCM 107)",icon:"👶",cards:[{q:"normal FHR?",a:"110–160 bpm"},{q:"Nagele's rule?",a:"LMP + 7 days − 3 months + 1 year"},{q:"4 Ps of labor?",a:"powers, passageway, passenger, psyche"},{q:"APGAR timing?",a:"1 min and 5 min after birth"}]},
+  ],
+  "3rd year 🟢":[
+    {name:"mother & child at-risk (NCM 109)",icon:"🤰",cards:[{q:"preeclampsia triad?",a:"hypertension, proteinuria, edema after 20 weeks"},{q:"MgSO4 antidote?",a:"calcium gluconate"},{q:"placenta previa?",a:"painless bright red bleeding"},{q:"abruptio placentae?",a:"painful dark red, board-like abdomen"}]},
+    {name:"oxygenation (NCM 112)",icon:"🫁",cards:[{q:"normal SpO2?",a:"95–100%; <90% = hypoxia"},{q:"normal pH?",a:"7.35–7.45"},{q:"normal PaCO2?",a:"35–45 mmHg"},{q:"respiratory acidosis?",a:"pH <7.35, PaCO2 >45"},{q:"TB transmission?",a:"airborne — N95 mask, negative pressure room"},{q:"position for respiratory distress?",a:"high fowler's (90°)"}]},
+    {name:"community health II (NCM 113)",icon:"🌍",cards:[{q:"incidence vs prevalence?",a:"incidence = new cases; prevalence = all existing"},{q:"chain of infection?",a:"agent → reservoir → exit → transmission → entry → host"},{q:"break chain how?",a:"hand hygiene"}]},
+    {name:"bioethics (NCM 108)",icon:"⚖️",cards:[{q:"4 principles?",a:"autonomy, beneficence, non-maleficence, justice"},{q:"autonomy?",a:"patient's right to decide for themselves"},{q:"non-maleficence?",a:"do no harm"}]},
+  ],
+  "4th year 🟣":[
+    {name:"psychiatric nursing (NCM 117)",icon:"🧠",cards:[{q:"Peplau's phases?",a:"orientation, identification, exploitation, resolution"},{q:"suicidal patient priority?",a:"safety first — remove means, stay with patient, notify team"},{q:"denial?",a:"refusing to acknowledge painful reality"},{q:"projection?",a:"attributing own feelings to others"}]},
+    {name:"critical care (NCM 118)",icon:"🚨",cards:[{q:"CPR rate?",a:"100–120/min"},{q:"CPR depth?",a:"≥2 inches"},{q:"Cushing's triad?",a:"hypertension, bradycardia, irregular respirations = ↑ICP"},{q:"shock types?",a:"hypovolemic, distributive, cardiogenic, obstructive"}]},
+    {name:"leadership (NCM 119)",icon:"👩‍⚕️",cards:[{q:"what CNA can do?",a:"vitals, bathing, ambulation of stable patients, feeding"},{q:"cannot be delegated?",a:"assessment, care planning, teaching, medications"},{q:"SBAR?",a:"situation, background, assessment, recommendation"}]},
+    {name:"disaster nursing (NCM 120)",icon:"🚑",cards:[{q:"START triage red?",a:"immediate"},{q:"START triage black?",a:"expectant"},{q:"START triage yellow?",a:"delayed"},{q:"START triage green?",a:"minor — walking wounded"}]},
+  ],
+};
+
+let allDecks=LS('app_decks',null);
+if(!allDecks){allDecks={};Object.keys(FEU_DECKS).forEach(yr=>{allDecks[yr]=FEU_DECKS[yr];});allDecks['battery exam 🔥']=BAT_DECKS;}
+Object.keys(FEU_DECKS).forEach(yr=>{if(!allDecks[yr])allDecks[yr]=FEU_DECKS[yr];});
+if(!allDecks['battery exam 🔥'])allDecks['battery exam 🔥']=BAT_DECKS;
+const saveDecks=()=>LSS('app_decks',allDecks);
+
+let activeDeck=null,fcIdx=0,currentMode='flash';
+let qCards=[],qIdx=0,qCorrect=0;
+let matchSel=null,matchDone=[];
+let tmpCards=[];
+
+function renderAllDecks(){
+  // battery exam
+  const batW=document.getElementById('batWrap');
+  batW.innerHTML=(allDecks['battery exam 🔥']||[]).map((dk,i)=>`<div class="deck-card" onclick="openDeck('battery exam 🔥',${i})"><span class="dk-icon">${dk.icon||'📚'}</span><div class="dk-name">${ESC(dk.name)}</div><div class="dk-cnt">${dk.cards.length} cards</div></div>`).join('');
+  // feu years
+  const yrC={'1st year 🔴':'y1','2nd year 🟡':'y2','3rd year 🟢':'y3','4th year 🟣':'y4'};
+  let html='';
+  ['1st year 🔴','2nd year 🟡','3rd year 🟢','4th year 🟣'].forEach(yr=>{
+    if(!allDecks[yr]||!allDecks[yr].length)return;
+    html+=`<div style="margin-bottom:1rem;"><div style="margin-bottom:0.4rem;"><span class="yr-badge ${yrC[yr]||''}">${yr}</span></div><div class="deck-grid">`;
+    allDecks[yr].forEach((dk,i)=>{html+=`<div class="deck-card" onclick="openDeck('${yr.replace(/'/g,"\\'")}',${i})"><span class="dk-icon">${dk.icon||'📚'}</span><div class="dk-name">${ESC(dk.name)}</div><div class="dk-cnt">${dk.cards.length} cards</div></div>`;});
+    html+='</div></div>';
+  });
+  document.getElementById('feuWrap').innerHTML=html;
+  // custom
+  const custom=Object.keys(allDecks).filter(k=>!['1st year 🔴','2nd year 🟡','3rd year 🟢','4th year 🟣','battery exam 🔥'].includes(k));
+  if(custom.length){let ch=`<div style="margin-bottom:0.4rem;"><span class="yr-badge" style="background:rgba(201,184,240,0.15);color:var(--accent2);">my decks 💜</span></div><div class="deck-grid">`;custom.forEach(yr=>{allDecks[yr].forEach((dk,i)=>{ch+=`<div class="deck-card" onclick="openDeck('${yr.replace(/'/g,"\\'")}',${i})"><span class="dk-icon">${dk.icon||'🃏'}</span><div class="dk-name">${ESC(dk.name)}</div><div class="dk-cnt">${dk.cards.length} cards</div><button class="btn btn-r btn-sm" style="margin-top:0.3rem;" onclick="event.stopPropagation();delDeck('${yr.replace(/'/g,"\\'")}',${i})">🗑️</button></div>`;});});ch+='</div>';document.getElementById('customWrap').innerHTML=ch;}
+  else document.getElementById('customWrap').innerHTML='';
+}
+renderAllDecks();
+
+function openDeck(yr,idx){activeDeck={yr,idx};fcIdx=0;document.getElementById('deckListWrap').style.display='none';document.getElementById('fcViewer').classList.add('show');setMode('flash');}
+function closeDeck(){activeDeck=null;document.getElementById('fcViewer').classList.remove('show');document.getElementById('deckListWrap').style.display='block';}
+function renderFC(){if(!activeDeck)return;const dk=allDecks[activeDeck.yr][activeDeck.idx];document.getElementById('fcName').textContent=dk.name;document.getElementById('fcProg').textContent=`${fcIdx+1}/${dk.cards.length}`;document.getElementById('fcQ').textContent='❓ '+dk.cards[fcIdx].q;document.getElementById('fcA').textContent='✓ '+dk.cards[fcIdx].a;document.getElementById('fcFill').style.width=((fcIdx+1)/dk.cards.length*100)+'%';document.getElementById('fcWrap').classList.remove('flipped');}
+function flipFC(){document.getElementById('fcWrap').classList.toggle('flipped');}
+function nextFC(){if(!activeDeck)return;const dk=allDecks[activeDeck.yr][activeDeck.idx];fcIdx=(fcIdx+1)%dk.cards.length;renderFC();}
+function prevFC(){if(!activeDeck)return;const dk=allDecks[activeDeck.yr][activeDeck.idx];fcIdx=(fcIdx-1+dk.cards.length)%dk.cards.length;renderFC();}
+function addCardToDeck(){if(!activeDeck)return;const q=document.getElementById('addQ').value.trim(),a=document.getElementById('addA').value.trim();if(!q||!a){alert('add both Q and A!! 💜');return;}allDecks[activeDeck.yr][activeDeck.idx].cards.push({q,a});saveDecks();document.getElementById('addQ').value='';document.getElementById('addA').value='';renderFC();confetti();}
+function delDeck(yr,idx){if(!confirm('delete this deck?'))return;allDecks[yr].splice(idx,1);if(!allDecks[yr].length)delete allDecks[yr];saveDecks();renderAllDecks();}
+
+function setMode(m){
+  currentMode=m;
+  ['Flash','MC','TF','ID','Match'].forEach(x=>{const div=document.getElementById('m'+x+'Div');const btn=document.getElementById('m'+x);if(div)div.style.display=x.toLowerCase()===m?'block':'none';if(btn)btn.classList.toggle('on',x.toLowerCase()===m);});
+  if(m==='flash')renderFC();
+  else if(activeDeck)startQ(m);
+}
+function startQ(mode){const dk=allDecks[activeDeck.yr][activeDeck.idx];qCards=[...dk.cards].sort(()=>Math.random()-0.5);qIdx=0;qCorrect=0;if(mode==='mc')loadMC();else if(mode==='tf')loadTF();else if(mode==='id')loadID();else if(mode==='match')loadMatch();}
+const scoreMsg=(c,t)=>{const p=Math.round(c/t*100);return`${c}/${t} (${p}%) — ${p>=80?'amazing!! 🌟 you got this!!':p>=60?'good job!! 💜 keep going!':'keep studying, baby — you got this!! 🩺'}`};
+
+function loadMC(){const tot=qCards.length;if(qIdx>=tot){document.getElementById('mcScore').style.display='block';document.getElementById('mcScoreTxt').textContent=scoreMsg(qCorrect,tot);return;}document.getElementById('mcScore').style.display='none';const c=qCards[qIdx];document.getElementById('mcQ').textContent=c.q;document.getElementById('mcN').textContent=qIdx+1;document.getElementById('mcT').textContent=tot;document.getElementById('mcFill').style.width=(qIdx/tot*100)+'%';document.getElementById('mcFB').style.display='none';document.getElementById('mcNext').style.display='none';const others=qCards.filter((_,i)=>i!==qIdx).map(x=>x.a).sort(()=>Math.random()-0.5).slice(0,3);const choices=[c.a,...others].sort(()=>Math.random()-0.5);document.getElementById('mcChoices').innerHTML=choices.map(ch=>`<button class="choice" onclick="answerMC(this,'${ch.replace(/'/g,"\\'").replace(/"/g,"&quot;")}','${c.a.replace(/'/g,"\\'").replace(/"/g,"&quot;")}')">${ESC(ch)}</button>`).join('');}
+function answerMC(btn,chosen,correct){document.querySelectorAll('#mcChoices .choice').forEach(b=>b.disabled=true);const fb=document.getElementById('mcFB');if(chosen===correct){btn.style.background='rgba(80,180,100,0.2)';btn.style.borderColor='rgba(80,180,100,0.5)';qCorrect++;fb.className='quiz-fb fb-correct';fb.textContent='✅ correct!!';}else{btn.style.background='rgba(232,80,80,0.2)';btn.style.borderColor='rgba(232,80,80,0.4)';document.querySelectorAll('#mcChoices .choice').forEach(b=>{if(b.textContent.trim()===correct){b.style.background='rgba(80,180,100,0.2)';b.style.borderColor='rgba(80,180,100,0.5)';}});fb.className='quiz-fb fb-wrong';fb.textContent=`❌ the answer is: ${correct}`;}fb.style.display='block';document.getElementById('mcNext').style.display='inline-block';}
+function loadTF(){const tot=qCards.length;if(qIdx>=tot){document.getElementById('tfScore').style.display='block';document.getElementById('tfScoreTxt').textContent=scoreMsg(qCorrect,tot);return;}document.getElementById('tfScore').style.display='none';const c=qCards[qIdx],isTrue=Math.random()>0.5;let stmt=isTrue?c.a:(qCards.filter((_,i)=>i!==qIdx)[0]||{a:c.a+'?'}).a;document.getElementById('tfQ').textContent=`"${stmt}" — is this the answer to: ${c.q}?`;document.getElementById('tfQ').dataset.correct=isTrue;document.getElementById('tfN').textContent=qIdx+1;document.getElementById('tfT').textContent=tot;document.getElementById('tfFill').style.width=(qIdx/tot*100)+'%';document.getElementById('tfFB').style.display='none';document.getElementById('tfNext').style.display='none';document.getElementById('tfTrue').disabled=false;document.getElementById('tfFalse').disabled=false;}
+function answerTF(u){const cor=document.getElementById('tfQ').dataset.correct==='true',right=u===cor;if(right)qCorrect++;const fb=document.getElementById('tfFB');fb.className=`quiz-fb ${right?'fb-correct':'fb-wrong'}`;fb.textContent=right?'✅ correct!!': `❌ it was ${cor?'true':'false'}! answer: ${qCards[qIdx].a}`;fb.style.display='block';document.getElementById('tfTrue').disabled=true;document.getElementById('tfFalse').disabled=true;document.getElementById('tfNext').style.display='inline-block';}
+function loadID(){const tot=qCards.length;if(qIdx>=tot){document.getElementById('idScore').style.display='block';document.getElementById('idScoreTxt').textContent=scoreMsg(qCorrect,tot);return;}document.getElementById('idScore').style.display='none';const c=qCards[qIdx];document.getElementById('idQ').textContent=c.q;document.getElementById('idQ').dataset.ans=c.a;document.getElementById('idN').textContent=qIdx+1;document.getElementById('idT').textContent=tot;document.getElementById('idFill').style.width=(qIdx/tot*100)+'%';document.getElementById('idAns').value='';document.getElementById('idAns').disabled=false;document.getElementById('idFB').style.display='none';document.getElementById('idNext').style.display='none';}
+function checkID(){const u=document.getElementById('idAns').value.trim().toLowerCase(),cor=document.getElementById('idQ').dataset.ans.toLowerCase(),right=cor.includes(u)&&u.length>2;if(right)qCorrect++;const fb=document.getElementById('idFB');fb.className=`quiz-fb ${right?'fb-correct':'fb-wrong'}`;fb.textContent=right?'✅ correct!!': `❌ answer: ${document.getElementById('idQ').dataset.ans}`;fb.style.display='block';document.getElementById('idAns').disabled=true;document.getElementById('idNext').style.display='inline-block';}
+function nextQ(m){qIdx++;if(m==='mc')loadMC();else if(m==='tf')loadTF();else if(m==='id')loadID();}
+function restartQ(m){qIdx=0;qCorrect=0;qCards=[...qCards].sort(()=>Math.random()-0.5);startQ(m);}
+function loadMatch(){if(!activeDeck)return;const dk=allDecks[activeDeck.yr][activeDeck.idx];const cards=dk.cards.slice(0,6);matchSel=null;matchDone=[];const qs=cards.map((c,i)=>({id:'q'+i,txt:c.q,pair:i,type:'q'}));const as=[...cards.map((c,i)=>({id:'a'+i,txt:c.a,pair:i,type:'a'}))].sort(()=>Math.random()-0.5);document.getElementById('matchArea').innerHTML=`<div style="display:flex;flex-direction:column;gap:0.35rem;">${qs.map(q=>`<div id="m${q.id}" class="match-item" onclick="selMatch('${q.id}',${q.pair},'q')" style="background:rgba(107,68,184,0.1);">${ESC(q.txt)}</div>`).join('')}</div><div style="display:flex;flex-direction:column;gap:0.35rem;">${as.map(a=>`<div id="m${a.id}" class="match-item" onclick="selMatch('${a.id}',${a.pair},'a')" style="background:rgba(80,180,120,0.1);">${ESC(a.txt)}</div>`).join('')}</div>`;document.getElementById('matchResult').style.display='none';}
+function selMatch(id,pair,type){const el=document.getElementById('m'+id);if(el.dataset.matched)return;if(!matchSel){matchSel={id,pair,type,el};el.style.outline='2px solid var(--accent)';return;}if(matchSel.type===type){matchSel.el.style.outline='';matchSel={id,pair,type,el};el.style.outline='2px solid var(--accent)';return;}if(matchSel.pair===pair){[el,matchSel.el].forEach(e=>{e.style.background='rgba(80,180,100,0.2)';e.style.outline='';e.dataset.matched='1';});matchDone.push(pair);if(matchDone.length>=Math.min(allDecks[activeDeck.yr][activeDeck.idx].cards.length,6)){setTimeout(()=>{document.getElementById('matchResult').style.display='block';document.getElementById('matchResult').textContent='all matched!! 🎉💜';confetti();},200);}}else{[el,matchSel.el].forEach(e=>{e.style.background='rgba(232,80,80,0.15)';e.style.outline='';});setTimeout(()=>{el.style.background=type==='q'?'rgba(107,68,184,0.1)':'rgba(80,180,120,0.1)';matchSel.el.style.background=matchSel.type==='q'?'rgba(107,68,184,0.1)':'rgba(80,180,120,0.1)';},700);}matchSel=null;}
+
+/* AI */
+function switchGenTab(n){for(let i=1;i<=3;i++){document.getElementById('gt'+i).className='gen-tab'+(i===n?' show':'');document.getElementById('gp'+i).classList.toggle('on',i===n);}}
+let pdfTxt='';
+async function handlePDF(e){const f=e.target.files[0];if(!f)return;document.getElementById('pdfLabel').textContent='reading pdf... ⚙️';try{const ab=await f.arrayBuffer();const lib=await loadPDFJS();const pdf=await lib.getDocument({data:ab}).promise;let text='';for(let i=1;i<=Math.min(pdf.numPages,20);i++){const pg=await pdf.getPage(i);const c=await pg.getTextContent();text+=c.items.map(s=>s.str).join(' ')+'\n';}pdfTxt=text.slice(0,6000);document.getElementById('pdfLabel').textContent=`✅ "${f.name}" loaded (${pdf.numPages} pages)`;if(!document.getElementById('pdfName').value)document.getElementById('pdfName').value=f.name.replace('.pdf','');}catch(err){pdfTxt='';document.getElementById('pdfLabel').textContent=`📄 ${f.name} uploaded`;}}
+function loadPDFJS(){return new Promise((res,rej)=>{if(window.pdfjsLib){window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';res(window.pdfjsLib);return;}const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';s.onload=()=>{window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';res(window.pdfjsLib);};s.onerror=rej;document.head.appendChild(s);});}
+async function genAI(src){let prompt='',deckName='',count=8;if(src===1){const t=document.getElementById('aiTopic').value.trim();if(!t){alert('type a topic!! 🩺');return;}count=parseInt(document.getElementById('aiCount').value);deckName=t;prompt=`Generate exactly ${count} nursing flashcard Q&A pairs about: "${t}". For a Filipino BSN student at FEU. Return ONLY a JSON array, no markdown: [{"q":"question","a":"answer"}]. Make questions NLE-relevant.`;}else if(src===2){count=parseInt(document.getElementById('pdfCount').value);deckName=document.getElementById('pdfName').value.trim()||'pdf notes';prompt=pdfTxt?`Based on these nursing notes, generate exactly ${count} flashcard Q&A pairs. Return ONLY JSON array: [{"q":"...","a":"..."}]. Notes:\n${pdfTxt}`:`Generate ${count} nursing flashcard pairs for "${deckName}". Return ONLY JSON: [{"q":"...","a":"..."}]`;}else{const t=document.getElementById('pasteText').value.trim();if(!t){alert('paste some notes!! ✍️');return;}count=parseInt(document.getElementById('pasteCount').value);deckName=document.getElementById('pasteName').value.trim()||'my notes';prompt=`Based on this text, generate exactly ${count} flashcard Q&A pairs. Return ONLY JSON array: [{"q":"...","a":"..."}]. Text:\n${t.slice(0,5000)}`;}document.getElementById('aiLoad').style.display='block';document.getElementById('aiLoadMsg').textContent=src===2?'reading your pdf... 📄':'generating flashcards... 🩺';try{const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1500,messages:[{role:'user',content:prompt}]})});const data=await res.json();const txt=data.content.map(i=>i.text||'').join('');const cards=JSON.parse(txt.replace(/```json|```/g,'').trim());if(!Array.isArray(cards)||!cards.length)throw new Error('bad');const key='ai generated 💜';if(!allDecks[key])allDecks[key]=[];allDecks[key].push({name:deckName,icon:'✨',cards});saveDecks();renderAllDecks();confetti();alert(`✨ ${cards.length} flashcards for "${deckName}"!! 💜`);if(src===1)document.getElementById('aiTopic').value='';if(src===3){document.getElementById('pasteText').value='';document.getElementById('pasteName').value='';}pdfTxt='';}catch(e){alert('oops!! something went wrong — try again 🥺');}finally{document.getElementById('aiLoad').style.display='none';}}
+function addTmpCard(){const q=document.getElementById('dkQ').value.trim(),a=document.getElementById('dkA').value.trim();if(!q||!a){alert('add both Q and A!! 💜');return;}tmpCards.push({q,a});document.getElementById('dkQ').value='';document.getElementById('dkA').value='';renderTmpCards();}
+function renderTmpCards(){document.getElementById('tmpCards').innerHTML=tmpCards.map((c,i)=>`<div class="cc-item"><div class="cc-q">❓ ${ESC(c.q)}</div><div class="cc-a">✓ ${ESC(c.a)}</div><button class="cc-del" onclick="tmpCards.splice(${i},1);renderTmpCards();">✕</button></div>`).join('');}
+function saveCustomDeck(){const name=document.getElementById('dkName').value.trim();if(!name){alert('give your deck a name!! 🃏');return;}if(!tmpCards.length){alert('add at least one card!! 💜');return;}const key='my decks 💜';if(!allDecks[key])allDecks[key]=[];allDecks[key].push({name,icon:'🃏',cards:[...tmpCards]});saveDecks();renderAllDecks();document.getElementById('dkName').value='';tmpCards=[];renderTmpCards();confetti();alert('deck saved!! 🎉');}
+
+/* NOTES */
+let nbCol='#9b7fd4';
+let notebooks=LS('app_nbs',[]);let notes=LS('app_notes',[]);
+let activeNb=null,activeNote=null;
+if(!notebooks.length){notebooks=[{id:1,name:'general 📓',color:'#9b7fd4'},{id:2,name:'nursing school 🩺',color:'#ffd94a'},{id:3,name:'personal 💜',color:'#e8b4a8'}];LSS('app_nbs',notebooks);}
+const saveNbs=()=>LSS('app_nbs',notebooks);
+const saveNotes=()=>LSS('app_notes',notes);
+function pickNbC(el){document.querySelectorAll('#nbCP .cp-dot').forEach(d=>d.classList.remove('on'));el.classList.add('on');nbCol=el.dataset.c;}
+function addNb(){const name=document.getElementById('newNbName').value.trim();if(!name)return;notebooks.push({id:Date.now(),name,color:nbCol});saveNbs();renderNbs();document.getElementById('newNbName').value='';}
+function delNb(id){if(!confirm('delete notebook and all its notes?'))return;notebooks=notebooks.filter(n=>n.id!==id);notes=notes.filter(n=>n.nbId!==id);if(activeNb===id)activeNb=null;saveNbs();saveNotes();renderNbs();renderNotes();}
+function selNb(id){activeNb=id;renderNbs();renderNotes();}
+function renderNbs(){document.getElementById('nbList').innerHTML=notebooks.map(nb=>`<div class="nb-item ${activeNb===nb.id?'on':''}" onclick="selNb(${nb.id})" style="border-color:${nb.color}22;"><div class="nb-dot" style="background:${nb.color}"></div>${ESC(nb.name)}<button class="nb-del" onclick="event.stopPropagation();delNb(${nb.id})">✕</button></div>`).join('');}
+renderNbs();
+function newNote(){activeNote={id:Date.now(),nbId:activeNb,title:'',body:'',color:'transparent',pinned:false,created:new Date().toISOString()};notes.unshift(activeNote);saveNotes();showEditor();}
+function showEditor(){document.getElementById('noteListDiv').style.display='none';document.getElementById('noteWriteDiv').classList.add('show');document.getElementById('noteTitleInp').value=activeNote.title||'';document.getElementById('noteBody').innerHTML=activeNote.body||'';document.getElementById('noteBody').style.background=activeNote.color||'transparent';}
+function closeNote(){document.getElementById('noteWriteDiv').classList.remove('show');document.getElementById('noteListDiv').style.display='block';activeNote=null;renderNotes();}
+function fmt(cmd,val){document.execCommand(cmd,false,val||null);document.getElementById('noteBody').focus();}
+function pickNoteC(el,e){e&&e.stopPropagation();document.querySelectorAll('.fmt-bar .cp-dot').forEach(d=>d.classList.remove('on'));el.classList.add('on');const c=el.dataset.c;document.getElementById('noteBody').style.background=c;if(activeNote){activeNote.color=c;autoSave();}}
+function autoSave(){if(!activeNote)return;activeNote.title=document.getElementById('noteTitleInp').value;activeNote.body=document.getElementById('noteBody').innerHTML;const i=notes.findIndex(n=>n.id===activeNote.id);if(i>-1)notes[i]=activeNote;saveNotes();const h=document.getElementById('autoSaveHint');if(h){h.textContent='saved ✓ 💜';setTimeout(()=>{if(h)h.textContent='changes saved automatically 💜';},1500);}}
+function pinNote(){if(!activeNote)return;activeNote.pinned=!activeNote.pinned;const i=notes.findIndex(n=>n.id===activeNote.id);if(i>-1)notes[i]=activeNote;saveNotes();}
+function delCurNote(){if(!activeNote)return;if(!confirm('delete?'))return;notes=notes.filter(n=>n.id!==activeNote.id);saveNotes();closeNote();}
+function editNote(id){const n=notes.find(n=>n.id===id);if(!n)return;activeNote=n;showEditor();}
+function delNote(id){if(!confirm('delete?'))return;notes=notes.filter(n=>n.id!==id);saveNotes();renderNotes();}
+function renderNotes(){const q=document.getElementById('noteSearch').value.toLowerCase();let f=activeNb?notes.filter(n=>n.nbId===activeNb):notes;if(q)f=f.filter(n=>(n.title+n.body).toLowerCase().includes(q));const sorted=[...f.filter(n=>n.pinned),...f.filter(n=>!n.pinned)];const l=document.getElementById('notesList'),em=document.getElementById('notesEmpty');if(!sorted.length){l.innerHTML='';em.style.display='block';return;}em.style.display='none';l.innerHTML=sorted.map(n=>`<div class="note-item ${n.pinned?'pinned':''}" style="background:${n.color||'transparent'}"><div class="note-title-d">${ESC(n.title||'untitled')}</div><div class="note-prev">${(n.body||'').replace(/<[^>]*>/g,' ').slice(0,90)}</div><div class="note-meta">${new Date(n.created).toLocaleDateString('en-PH',{month:'short',day:'numeric',year:'numeric'})}</div><div style="display:flex;gap:0.3rem;margin-top:0.35rem;"><button class="btn btn-g btn-sm" onclick="editNote(${n.id})">✏️ edit</button><button class="btn btn-r btn-sm" onclick="delNote(${n.id})">🗑️</button></div></div>`).join('');}
+renderNotes();
+
+/* STUDY TABS */
+function switchStudy(name,btn){document.querySelectorAll('.spane').forEach(p=>p.classList.remove('show'));document.querySelectorAll('.stab').forEach(b=>b.classList.remove('on'));document.getElementById('sp-'+name).classList.add('show');btn.classList.add('on');if(name==='reviewer')renderReviewer();}
+
+/* TODOS */
+let todos=LS('app_todos',[]);const saveTodos=()=>LSS('app_todos',todos);
+const catC={school:'b-school',personal:'b-personal',reminder:'b-reminder',urgent:'b-urgent'};
+function addTodo(){const t=document.getElementById('todoTxt').value.trim();if(!t)return;const cat=document.getElementById('todoCat').value;todos.unshift({id:Date.now(),text:t,cat,done:false});saveTodos();renderTodos();document.getElementById('todoTxt').value='';confetti();}
+function toggleTodo(id){const t=todos.find(t=>t.id===id);if(t){t.done=!t.done;saveTodos();renderTodos();}}
+function delTodo(id){todos=todos.filter(t=>t.id!==id);saveTodos();renderTodos();}
+function renderTodos(){const l=document.getElementById('todoList');if(!todos.length){l.innerHTML='<div class="empty-state" style="padding:1.5rem;"><span class="ei">📋</span><p>no tasks yet! 🌸</p></div>';return;}const sorted=[...todos.filter(t=>!t.done),...todos.filter(t=>t.done)];l.innerHTML=sorted.map(t=>`<div class="todo-item ${t.done?'done':''}"><div class="td-chk ${t.done?'on':''}" onclick="toggleTodo(${t.id})">${t.done?'✓':''}</div><div class="td-txt">${ESC(t.text)}</div><span class="td-badge ${catC[t.cat]||''}">${t.cat}</span><button class="td-del" onclick="delTodo(${t.id})">✕</button></div>`).join('');}
+renderTodos();
+
+/* REMINDERS */
+let rems=LS('app_rems',[]);const saveRems=()=>LSS('app_rems',rems);
+function addRem(){const t=document.getElementById('remTxt').value.trim();if(!t){alert('add a reminder!! 🔔');return;}const d=document.getElementById('remDate').value;rems.unshift({id:Date.now(),text:t,date:d});saveRems();renderRems();document.getElementById('remTxt').value='';document.getElementById('remDate').value='';confetti();}
+function delRem(id){rems=rems.filter(r=>r.id!==id);saveRems();renderRems();}
+function renderRems(){const l=document.getElementById('remList');if(!rems.length){l.innerHTML='<div class="empty-state" style="padding:2rem;"><span class="ei">🔔</span><p>no reminders yet! 🌸</p></div>';return;}const now=new Date();l.innerHTML=rems.map(r=>{const ov=r.date&&new Date(r.date)<now;return`<div class="rem-item ${ov?'overdue':''}"><span style="font-size:1.3rem;">${ov?'⚠️':'🔔'}</span><div style="flex:1;"><div style="font-family:var(--font-b);font-size:0.85rem;color:var(--ink);">${ESC(r.text)}</div>${r.date?`<div style="font-size:0.7rem;color:var(--ink3);font-family:var(--font-b);">${new Date(r.date).toLocaleString('en-PH',{dateStyle:'medium',timeStyle:'short'})}${ov?' — overdue!!':''}</div>`:''}</div><button class="td-del" onclick="delRem(${r.id})">✕</button></div>`;}).join('');}
+renderRems();
+
+
+/* ════════════════════════
+   REVIEWER DATA
+════════════════════════ */
+const REVIEWER = [
+  {yr:"🔥 battery exam",subj:"vital signs & assessment",content:`
+<h3>vital signs — normal ranges</h3>
+<ul>
+<li><b>HR:</b> 60–100 bpm | tachycardia >100 | bradycardia <60</li>
+<li><b>RR:</b> 12–20 breaths/min | tachypnea >20 | bradypnea <12</li>
+<li><b>BP:</b> <120/80 mmHg normal | hypertension ≥130/80 | hypotension <90/60</li>
+<li><b>Temperature:</b> 36.5–37.5°C oral | fever >38°C | hypothermia <35°C</li>
+<li><b>SpO2:</b> 95–100% normal | hypoxia <90% | critical <85%</li>
+<li><b>Capillary refill:</b> <2 seconds normal</li>
+</ul>
+<h3>physical assessment sequence</h3>
+<ul>
+<li><b>General:</b> inspect → palpate → percuss → auscultate (IPPA)</li>
+<li><b>Abdomen (exception):</b> inspect → AUSCULTATE → percuss → palpate (bowel sounds before palpation)</li>
+<li><b>PERRLA:</b> pupils equal, round, reactive to light and accommodation</li>
+</ul>
+<h3>head-to-toe assessment order</h3>
+<p>general appearance → vital signs → HEENT → neck → chest/respiratory → cardiovascular → abdomen → genitourinary → musculoskeletal → neurological → integumentary</p>`},
+
+  {yr:"🔥 battery exam",subj:"pharmacology mnemonics",content:`
+<h3>drug class endings — memorize these!!</h3>
+<ul>
+<li><b>-olol</b> = beta blockers (metoprolol, atenolol, propranolol)</li>
+<li><b>-pril</b> = ACE inhibitors (lisinopril, enalapril, captopril)</li>
+<li><b>-sartan</b> = ARBs (losartan, valsartan, irbesartan)</li>
+<li><b>-statin</b> = statins (atorvastatin, simvastatin, rosuvastatin)</li>
+<li><b>-cillin</b> = penicillins (amoxicillin, ampicillin)</li>
+<li><b>-mycin/-micin</b> = aminoglycosides or macrolides</li>
+<li><b>-azole</b> = antifungals (fluconazole, ketoconazole)</li>
+<li><b>-pam/-lam</b> = benzodiazepines (diazepam, lorazepam)</li>
+<li><b>-caine</b> = local anesthetics (lidocaine, bupivacaine)</li>
+</ul>
+<h3>antidotes — must memorize!!</h3>
+<ul>
+<li>Heparin → <b>Protamine sulfate</b></li>
+<li>Warfarin → <b>Vitamin K</b></li>
+<li>Acetaminophen → <b>N-acetylcysteine (Mucomyst)</b></li>
+<li>Opioids → <b>Naloxone (Narcan)</b></li>
+<li>Benzodiazepines → <b>Flumazenil</b></li>
+<li>Magnesium Sulfate → <b>Calcium Gluconate</b></li>
+<li>Iron → <b>Deferoxamine</b></li>
+<li>Digoxin → <b>Digibind (Digoxin immune Fab)</b></li>
+</ul>
+<h3>6 rights of medication administration</h3>
+<p>Right <b>P</b>atient · Right <b>D</b>rug · Right <b>D</b>ose · Right <b>R</b>oute · Right <b>T</b>ime · Right <b>D</b>ocumentation</p>`},
+
+  {yr:"🔥 battery exam",subj:"ABG interpretation",content:`
+<h3>normal ABG values</h3>
+<ul>
+<li><b>pH:</b> 7.35–7.45 (acidosis <7.35 | alkalosis >7.45)</li>
+<li><b>PaCO2:</b> 35–45 mmHg (respiratory indicator)</li>
+<li><b>HCO3:</b> 22–26 mEq/L (metabolic indicator)</li>
+<li><b>PaO2:</b> 80–100 mmHg</li>
+</ul>
+<h3>ROME mnemonic for ABG interpretation</h3>
+<ul>
+<li><b>R</b>espiratory <b>O</b>pposite — pH and PaCO2 go in opposite directions</li>
+<li><b>M</b>etabolic <b>E</b>qual — pH and HCO3 go in the same direction</li>
+</ul>
+<h3>4 primary imbalances</h3>
+<ul>
+<li><b>Respiratory Acidosis:</b> pH↓ PaCO2↑ — COPD, hypoventilation, opioid OD, airway obstruction</li>
+<li><b>Respiratory Alkalosis:</b> pH↑ PaCO2↓ — anxiety, hyperventilation, high altitude, PE</li>
+<li><b>Metabolic Acidosis:</b> pH↓ HCO3↓ — DKA, renal failure, diarrhea, lactic acidosis</li>
+<li><b>Metabolic Alkalosis:</b> pH↑ HCO3↑ — vomiting, NG suctioning, antacid overuse</li>
+</ul>
+<h3>steps to interpret ABG</h3>
+<p>1. Check pH (acidosis or alkalosis?) → 2. Check PaCO2 (respiratory cause?) → 3. Check HCO3 (metabolic cause?) → 4. Determine if compensated or uncompensated</p>`},
+
+  {yr:"🔥 battery exam",subj:"lab values quick reference",content:`
+<h3>electrolytes</h3>
+<ul>
+<li>Na+ (Sodium): <b>135–145 mEq/L</b></li>
+<li>K+ (Potassium): <b>3.5–5.0 mEq/L</b> — critical: <2.5 or >6.5</li>
+<li>Ca2+ (Calcium): <b>8.5–10.5 mg/dL</b></li>
+<li>Mg2+ (Magnesium): <b>1.5–2.5 mEq/L</b></li>
+<li>Cl- (Chloride): <b>96–106 mEq/L</b></li>
+<li>Phosphate: <b>2.5–4.5 mg/dL</b></li>
+</ul>
+<h3>complete blood count</h3>
+<ul>
+<li>WBC: <b>4,500–11,000 cells/mcL</b> (>11,000 = infection)</li>
+<li>RBC (female): <b>3.8–5.1 million/mcL</b></li>
+<li>Hemoglobin (female): <b>12–16 g/dL</b> | (male): 13.5–17.5</li>
+<li>Hematocrit (female): <b>36–46%</b> | (male): 41–53%</li>
+<li>Platelets: <b>150,000–400,000/mcL</b></li>
+</ul>
+<h3>renal function</h3>
+<ul>
+<li>BUN: <b>7–20 mg/dL</b></li>
+<li>Creatinine: <b>0.6–1.2 mg/dL</b> (elevated = kidney problem)</li>
+<li>Urine output: <b>0.5–1 mL/kg/hr</b></li>
+</ul>
+<h3>coagulation</h3>
+<ul>
+<li>PT: 11–13 seconds | INR normal: 0.8–1.2 | therapeutic (warfarin): 2.0–3.0</li>
+<li>aPTT: 25–35 seconds | therapeutic (heparin): 1.5–2.5x normal</li>
+</ul>`},
+
+  {yr:"1st year 🔴",subj:"anatomy & physiology",content:`
+<h3>levels of organization</h3>
+<p>chemical → cellular → tissue → organ → organ system → organism</p>
+<h3>11 organ systems</h3>
+<p>integumentary, skeletal, muscular, nervous, endocrine, cardiovascular, lymphatic, respiratory, digestive, urinary, reproductive</p>
+<h3>anatomical terminology</h3>
+<ul>
+<li><b>Anterior/Posterior:</b> front/back</li>
+<li><b>Superior/Inferior:</b> above/below</li>
+<li><b>Medial/Lateral:</b> toward midline/away from midline</li>
+<li><b>Proximal/Distal:</b> closer to/farther from origin</li>
+<li><b>Sagittal plane:</b> divides left and right</li>
+<li><b>Frontal/Coronal plane:</b> divides anterior and posterior</li>
+<li><b>Transverse plane:</b> divides superior and inferior</li>
+</ul>
+<h3>4 tissue types</h3>
+<ul>
+<li><b>Epithelial:</b> covers body surfaces, lines organs</li>
+<li><b>Connective:</b> supports, connects (bone, cartilage, blood, fat)</li>
+<li><b>Muscle:</b> skeletal, cardiac, smooth</li>
+<li><b>Nervous:</b> transmits electrical impulses (neurons, neuroglia)</li>
+</ul>
+<h3>homeostasis</h3>
+<p>The body's ability to maintain a stable internal environment. Two mechanisms: <b>negative feedback</b> (most common — counteracts change) and <b>positive feedback</b> (amplifies change, e.g. childbirth).</p>`},
+
+  {yr:"1st year 🔴",subj:"theoretical foundations (NCM 100)",content:`
+<h3>nursing theorists</h3>
+<ul>
+<li><b>Florence Nightingale:</b> Environmental Theory — clean environment promotes healing</li>
+<li><b>Virginia Henderson:</b> 14 basic needs — "do what patients would do themselves if able"</li>
+<li><b>Jean Watson:</b> Theory of Human Caring — 10 carative factors, transpersonal relationship</li>
+<li><b>Dorothea Orem:</b> Self-Care Deficit Theory — three nursing systems: wholly compensatory, partly compensatory, supportive-educative</li>
+<li><b>Betty Neuman:</b> Systems Model — lines of defense against stressors</li>
+<li><b>Sister Callista Roy:</b> Adaptation Model — four adaptive modes</li>
+<li><b>Hildegard Peplau:</b> Interpersonal Relations — therapeutic relationship phases</li>
+</ul>
+<h3>nursing metaparadigm</h3>
+<p><b>Person</b> (client) · <b>Environment</b> · <b>Health</b> · <b>Nursing</b></p>
+<h3>nursing process — ADPIE</h3>
+<ul>
+<li><b>A</b>ssessment — collect subjective & objective data</li>
+<li><b>D</b>iagnosis — nursing diagnosis (PES format)</li>
+<li><b>P</b>lanning — set goals, NOC</li>
+<li><b>I</b>mplementation — carry out interventions, NIC</li>
+<li><b>E</b>valuation — was goal met?</li>
+</ul>`},
+
+  {yr:"2nd year 🟡",subj:"fundamentals of nursing (NCM 103)",content:`
+<h3>asepsis</h3>
+<ul>
+<li><b>Medical asepsis:</b> clean technique — reduces number and spread of microorganisms</li>
+<li><b>Surgical asepsis:</b> sterile technique — eliminates ALL microorganisms including spores</li>
+<li><b>Hand hygiene:</b> most important infection control measure</li>
+<li><b>Standard precautions:</b> applies to ALL patients regardless of diagnosis</li>
+</ul>
+<h3>vital signs assessment</h3>
+<p>Always assess before and after medications, procedures, or any change in condition.</p>
+<h3>nursing diagnosis formats</h3>
+<ul>
+<li><b>Actual:</b> Problem R/T Etiology AEB Signs/Symptoms</li>
+<li><b>Risk:</b> Risk for [Problem] R/T Risk Factors</li>
+<li><b>Wellness:</b> Readiness for enhanced [behavior]</li>
+</ul>
+<h3>Maslow's hierarchy (nursing priority)</h3>
+<p>Physiological → Safety → Love/Belonging → Esteem → Self-Actualization</p>
+<p><b>Always address physiological needs FIRST</b> — airway, breathing, circulation, pain</p>`},
+
+  {yr:"2nd year 🟡",subj:"pharmacology (NCM 106)",content:`
+<h3>pharmacokinetics — ADME</h3>
+<ul>
+<li><b>A</b>bsorption — how drug enters bloodstream</li>
+<li><b>D</b>istribution — how drug moves through body</li>
+<li><b>M</b>etabolism — liver (first-pass effect)</li>
+<li><b>E</b>xcretion — kidneys (monitor renal function)</li>
+</ul>
+<h3>routes of administration</h3>
+<p><b>IV</b> = fastest onset | <b>IM</b> = moderate | <b>SQ/SC</b> = slow | <b>Oral</b> = slowest but safest</p>
+<h3>key cardiovascular drugs</h3>
+<ul>
+<li><b>Digoxin:</b> check apical pulse 1 full min; hold <60 bpm; monitor for toxicity (nausea, yellow/green vision)</li>
+<li><b>Warfarin:</b> monitor INR (therapeutic 2.0–3.0); antidote = Vitamin K; many drug/food interactions</li>
+<li><b>Heparin:</b> monitor aPTT; antidote = Protamine sulfate; check platelet count (HIT)</li>
+<li><b>Furosemide (Lasix):</b> loop diuretic; monitor K+ levels (hypokalemia risk)</li>
+<li><b>Lisinopril (ACE inhibitor):</b> watch for dry cough, hyperkalemia, angioedema</li>
+</ul>`},
+
+  {yr:"3rd year 🟢",subj:"oxygenation problems (NCM 112)",content:`
+<h3>respiratory disorders</h3>
+<ul>
+<li><b>COPD:</b> chronic bronchitis + emphysema; low O2 drive; O2 at 1–2 L/min; barrel chest</li>
+<li><b>Asthma:</b> reversible airway obstruction; bronchospasm; use MDI properly; tripod position</li>
+<li><b>Pneumonia:</b> consolidation; productive cough; position affected side DOWN for drainage</li>
+<li><b>TB:</b> airborne; N95 mask; negative pressure room; RIPE therapy (Rifampin, Isoniazid, Pyrazinamide, Ethambutol)</li>
+<li><b>PE:</b> sudden dyspnea, chest pain, hemoptysis; risk: Virchow triad</li>
+</ul>
+<h3>oxygen delivery devices</h3>
+<ul>
+<li>Nasal cannula: 1–6 L/min (24–44% FiO2)</li>
+<li>Simple face mask: 6–10 L/min (35–50%)</li>
+<li>Non-rebreather mask: 10–15 L/min (60–90%)</li>
+<li>Venturi mask: precise FiO2 delivery</li>
+</ul>
+<h3>positioning</h3>
+<ul>
+<li><b>Respiratory distress:</b> High Fowler (90°)</li>
+<li><b>Unconscious:</b> lateral (recovery position)</li>
+<li><b>After lung surgery:</b> unaffected side DOWN</li>
+<li><b>Pneumonia one side:</b> affected side DOWN (drainage)</li>
+</ul>`},
+
+  {yr:"4th year 🟣",subj:"psychiatric nursing (NCM 117)",content:`
+<h3>therapeutic communication</h3>
+<ul>
+<li><b>Therapeutic techniques:</b> active listening, open-ended questions, reflection, silence, clarification</li>
+<li><b>Non-therapeutic:</b> false reassurance ("you'll be fine"), advice-giving, changing subject, closed questions</li>
+</ul>
+<h3>Peplau's phases</h3>
+<ul>
+<li><b>Orientation:</b> problem identified, trust building</li>
+<li><b>Identification:</b> patient identifies with nurse</li>
+<li><b>Exploitation:</b> patient uses services</li>
+<li><b>Resolution:</b> goals met, relationship ends</li>
+</ul>
+<h3>mental health disorders</h3>
+<ul>
+<li><b>Schizophrenia:</b> positive sx (hallucinations, delusions) + negative sx (flat affect, poverty of speech)</li>
+<li><b>Depression:</b> anhedonia, sadness, sleep changes, low energy; priority = safety</li>
+<li><b>Bipolar:</b> mania + depression; lithium therapy (monitor levels 0.6–1.2 mEq/L)</li>
+<li><b>Anxiety disorders:</b> mild=learning enhanced; moderate=focus narrows; severe=unable to function; panic=terror</li>
+</ul>
+<h3>suicide risk — priority nursing action</h3>
+<p>SAFETY FIRST — remove means, stay with patient 1:1, notify team, document, do NOT leave alone.</p>`},
+
+  {yr:"🩺 assessments & retdem",subj:"head-to-toe assessment — full guide",content:`
+<h3>preparation</h3>
+<p>Wash hands → introduce yourself → explain procedure → ensure privacy → position patient comfortably (sitting or supine)</p>
+<h3>1. general survey</h3>
+<p>Level of consciousness, distress, body habitus, hygiene, gait, affect, speech</p>
+<h3>2. vital signs</h3>
+<p>Temperature → Pulse → Respirations → BP → SpO2 → Pain scale</p>
+<h3>3. HEENT</h3>
+<ul>
+<li><b>Head:</b> shape, scalp lesions, hair distribution</li>
+<li><b>Eyes:</b> PERRLA, visual acuity, conjunctiva (pallor/jaundice), sclera</li>
+<li><b>Ears:</b> auricle, external canal, hearing test (whisper test)</li>
+<li><b>Nose:</b> septum, mucosa, patency</li>
+<li><b>Throat:</b> tonsils, uvula, dentition, oral mucosa</li>
+</ul>
+<h3>4. neck</h3>
+<p>Lymph nodes, thyroid, JVD, carotid pulses, tracheal position</p>
+<h3>5. respiratory</h3>
+<p>Inspect (rate, depth, symmetry, use of accessory muscles) → Palpate (tactile fremitus) → Percuss → Auscultate (vesicular, bronchovesicular, bronchial)</p>
+<h3>6. cardiovascular</h3>
+<p>Inspect → Palpate (PMI at 5th ICS MCL) → Auscultate (S1 at apex, S2 at base; listen for murmurs, S3, S4) → Peripheral pulses</p>
+<h3>7. abdomen</h3>
+<p>Inspect → <b>AUSCULTATE FIRST</b> → Percuss → Palpate (light then deep)</p>
+<h3>8. musculoskeletal</h3>
+<p>ROM, muscle strength (0–5 scale), symmetry, joint deformities</p>
+<h3>9. neurological</h3>
+<p>LOC (GCS) → orientation (person, place, time) → motor/sensory → reflexes → cranial nerves</p>
+<h3>10. integumentary</h3>
+<p>Color, turgor, temperature, moisture, lesions (ABCDE for skin assessment)</p>`},
+
+  {yr:"🩺 assessments & retdem",subj:"neurological assessment & GCS",content:`
+<h3>glasgow coma scale (GCS)</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+<tr style="background:rgba(107,68,184,0.15);"><th style="padding:4px 8px;text-align:left;">category</th><th>response</th><th>score</th></tr>
+<tr><td><b>eye opening</b></td><td>spontaneous / to voice / to pain / none</td><td>4 / 3 / 2 / 1</td></tr>
+<tr><td><b>verbal</b></td><td>oriented / confused / words / sounds / none</td><td>5 / 4 / 3 / 2 / 1</td></tr>
+<tr><td><b>motor</b></td><td>obeys / localizes / withdraws / flexion / extension / none</td><td>6 / 5 / 4 / 3 / 2 / 1</td></tr>
+</table>
+<p style="margin-top:0.5rem;"><b>Total: 15 = fully conscious | 8 or below = coma | 3 = deepest coma</b></p>
+<h3>levels of consciousness</h3>
+<ul>
+<li><b>Alert:</b> fully awake, oriented</li>
+<li><b>Lethargic:</b> drowsy, slow responses</li>
+<li><b>Obtunded:</b> difficult to arouse, limited responses</li>
+<li><b>Stuporous:</b> arouses only to vigorous stimuli</li>
+<li><b>Comatose:</b> cannot be aroused</li>
+</ul>
+<h3>increased ICP — Cushing triad</h3>
+<p><b>Hypertension + Bradycardia + Irregular respirations</b> = EMERGENCY, notify MD immediately</p>`},
+
+  {yr:"🩺 assessments & retdem",subj:"cardiovascular assessment",content:`
+<h3>heart sounds</h3>
+<ul>
+<li><b>S1 ("lub"):</b> closure of mitral & tricuspid valves — best heard at APEX (5th ICS MCL)</li>
+<li><b>S2 ("dub"):</b> closure of aortic & pulmonic valves — best heard at BASE (2nd ICS)</li>
+<li><b>S3 (ventricular gallop):</b> early diastole — abnormal in adults (heart failure)</li>
+<li><b>S4 (atrial gallop):</b> late diastole — associated with HTN, MI</li>
+</ul>
+<h3>auscultation sites</h3>
+<ul>
+<li><b>Aortic:</b> 2nd ICS, right sternal border</li>
+<li><b>Pulmonic:</b> 2nd ICS, left sternal border</li>
+<li><b>Erb's point:</b> 3rd ICS, left sternal border</li>
+<li><b>Tricuspid:</b> 4th ICS, left sternal border</li>
+<li><b>Mitral (Apex):</b> 5th ICS, midclavicular line</li>
+</ul>
+<h3>peripheral vascular assessment</h3>
+<ul>
+<li>Pulse scale: 0=absent, 1+=weak/thready, 2+=normal, 3+=bounding</li>
+<li>Capillary refill: <2 seconds normal</li>
+<li>Ankle-brachial index (ABI): >0.9 normal; <0.9 = PAD</li>
+</ul>`},
+];
+
+let revFilter = 'all';
+function renderReviewer(){
+  const q = document.getElementById('revSearch').value.toLowerCase();
+  const list = document.getElementById('reviewerList');
+  const filtered = REVIEWER.filter(r =>
+    (revFilter==='all' || r.yr===revFilter) &&
+    (!q || r.subj.toLowerCase().includes(q) || r.content.toLowerCase().includes(q))
+  );
+  if(!filtered.length){list.innerHTML='<div class="empty-state"><span class="ei">📖</span><p>no results found 🌸</p></div>';return;}
+
+  // group by year
+  const groups={};
+  filtered.forEach(r=>{if(!groups[r.yr])groups[r.yr]=[];groups[r.yr].push(r);});
+
+  list.innerHTML = Object.keys(groups).map(yr=>`
+    <div style="margin-bottom:1rem;">
+      <div style="font-family:var(--font-d);font-size:1rem;color:var(--accent);font-style:italic;margin-bottom:0.5rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border);">${yr}</div>
+      ${groups[yr].map((r,i)=>`
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:0.5rem;overflow:hidden;">
+          <div onclick="toggleRev(this)" style="padding:0.85rem 1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background 0.15s;" onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background=''">
+            <div style="font-family:var(--font-h);font-size:1rem;color:var(--accent);">${r.subj}</div>
+            <span style="color:var(--ink3);font-size:0.8rem;transition:transform 0.2s;" class="rev-arrow">▼</span>
+          </div>
+          <div class="rev-body" style="display:none;padding:0 1rem 1rem;font-family:var(--font-b);font-size:0.82rem;color:var(--ink2);line-height:1.7;">
+            <div style="border-top:1px solid var(--border);padding-top:0.8rem;">${r.content}</div>
+          </div>
+        </div>`).join('')}
+    </div>`).join('');
+
+  // style inner headings
+  list.querySelectorAll('.rev-body h3').forEach(h=>{
+    h.style.cssText='font-family:var(--font-h);font-size:1rem;color:var(--accent);margin:0.8rem 0 0.3rem;';
+  });
+  list.querySelectorAll('.rev-body ul').forEach(ul=>{
+    ul.style.cssText='padding-left:1.2rem;margin-bottom:0.5rem;';
+  });
+  list.querySelectorAll('.rev-body li').forEach(li=>{
+    li.style.cssText='margin-bottom:0.2rem;';
+  });
+  list.querySelectorAll('.rev-body p').forEach(p=>{
+    p.style.cssText='margin-bottom:0.5rem;';
+  });
+}
+function toggleRev(header){
+  const body=header.nextElementSibling;
+  const arrow=header.querySelector('.rev-arrow');
+  const isOpen=body.style.display==='block';
+  body.style.display=isOpen?'none':'block';
+  arrow.style.transform=isOpen?'':'rotate(180deg)';
+}
+function filterReviewer(){renderReviewer();}
+
+
+
+/* CONFETTI */
+function confetti(){const cols=['#c9b8f0','#f7b8d8','#ffd94a','#b8f0d8','#e8d5a3','white','rgba(107,68,184,0.6)'];for(let i=0;i<26;i++){const el=document.createElement('div');el.className='cf';el.style.cssText=`left:${22+Math.random()*56}vw;top:40vh;background:${cols[Math.floor(Math.random()*cols.length)]};animation-delay:${Math.random()*0.4}s;width:${6+Math.random()*7}px;height:${6+Math.random()*7}px;border-radius:${Math.random()>0.5?'50%':'2px'};`;document.body.appendChild(el);setTimeout(()=>el.remove(),1700);}}
+</script>
+</body>
+</html>
